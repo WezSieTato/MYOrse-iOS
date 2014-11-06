@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    NSArray* permissions =  @[@"public_profile", @"user_friends", @"email"];
+//    @"public_profile", @"user_friends", @"email", 
+    NSArray* permissions =  @[@"xmpp_login"];
     FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:permissions];
     loginView.center = self.view.center;
     loginView.delegate = self;

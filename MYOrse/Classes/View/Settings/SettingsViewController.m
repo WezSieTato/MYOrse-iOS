@@ -9,6 +9,14 @@
 #import "SettingsViewController.h"
 #import "StartViewController.h"
 
+@interface SettingsViewController (){
+    
+}
+
+
+@property (strong, nonatomic) XMPPStream* calibrateStream;
+@end
+
 @implementation SettingsViewController
 
 
@@ -20,16 +28,108 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-//    NSArray *permissions = @[@"public_profile", @"user_friends"];
-//    [FBSession openActiveSessionWithReadPermissions:permissions
-//                                       allowLoginUI:YES
-//                                  completionHandler:
-//     ^(FBSession *session,
-//       FBSessionState state, NSError *error) {
-//         //         [self sessionStateChanged:session state:state error:error];
-//         
-//     }];
+
+    
 }
+- (IBAction)calibrate:(id)sender {
+    NSLog(@"Calibrate clicked");
+    
+    _calibrateStream = [[XMPPStream alloc] initWithFacebookAppId:@"732832850124501"];
+    [_calibrateStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    NSError *error = nil;
+    [_calibrateStream connectWithTimeout:100 error:&error];
+    
+}
+
+- (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error
+{
+    NSLog(@"XMPP authentication failed");
+}
+
+//-(void)xmm
+
+-(void)xmppStreamDidConnect:(XMPPStream *)sender{
+    if (![_calibrateStream isSecure])
+    {
+        NSLog(@"XMPP STARTTLS...");
+        NSError *error = nil;
+        BOOL result = [_calibrateStream secureConnection:&error];
+        
+        if (result == NO)
+        {
+            NSLog(@"XMPP STARTTLS failed");
+        }
+    }
+    else
+    {
+        FBSession* session = [FBSession activeSession];
+        [session requestNewReadPermissions:[NSArray arrayWithObject:@"xmpp_login"]
+                         completionHandler:^(FBSession *session, NSError *error) {
+                             
+                             NSLog(@"XMPP X-FACEBOOK-PLATFORM SASL...");
+                             NSError *error1 = nil;
+                             BOOL result = [_calibrateStream authenticateWithFacebookAccessToken: [[session accessTokenData] accessToken]
+                                                                                           error:&error1];
+                             
+                             if (result == NO)
+                             {
+                                 NSLog(@"XMPP authentication failed");
+                             }
+                         }];
+    }
+}
+
+- (void)xmppStream:(XMPPStream *)sender willSecureWithSettings:(NSMutableDictionary *)settings
+{
+    
+    if (NO)
+    {
+        [settings setObject:[NSNumber numberWithBool:YES] forKey:(NSString *)kCFStreamSSLAllowsAnyRoot];
+    }
+    
+    if (NO)
+    {
+        [settings setObject:[NSNull null] forKey:(NSString *)kCFStreamSSLPeerName];
+    }
+    else
+    {
+        NSString *expectedCertName = [sender hostName];
+        if (expectedCertName == nil)
+        {
+            expectedCertName = [[sender myJID] domain];
+        }
+        
+        [settings setObject:expectedCertName forKey:(NSString *)kCFStreamSSLPeerName];
+    }
+}
+
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
+{
+    NSLog(@"siema %s", __PRETTY_FUNCTION__);
+}
+
+//-(void)x
+
+- (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
+{
+    NSLog(@"XMPP disconnected");
+}
+
+-(void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
+    NSLog(@"NotRester");
+}
+
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+{
+    // we recived message
+    NSLog(@"wiadomosc");
+}
+
+-(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    NSLog(@"PresencE");
+}
+
+//-(void)xmpp
 
 - (IBAction)logout:(id)sender {
     [FBSession.activeSession closeAndClearTokenInformation];
@@ -37,61 +137,5 @@
     [self presentViewController:next animated:YES completion:nil];
 }
 
-- (IBAction)pickFriend:(id)sender {
-    
-    
-    if (!FBSession.activeSession.isOpen) {
-        // if the session is closed, then we open it here, and establish a handler for state changes
-    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends", @"email"]
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session,
-                                                      FBSessionState state,
-                                                      NSError *error) {
-                                      if (error) {
-                                          UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                              message:error.localizedDescription
-                                                                                             delegate:nil
-                                                                                    cancelButtonTitle:@"OK"
-                                                                                    otherButtonTitles:nil];
-                                          [alertView show];
-                                      } else if (session.isOpen) {
-                                          [self pickFriend:sender];
-                                      }
-                                  }];
-    return;
-    }
-    
-    FBRequest* friendsRequest = [FBRequest requestWithGraphPath:@"me/permissions" parameters:nil HTTPMethod:@"GET"];
-    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection, NSDictionary* result, NSError *error) {
-        //store result into facebookFriendsArray
-        NSArray* facebookFriendsArray = [result objectForKey:@"data"];
-        
-        FBFriendPickerViewController *friendPickerController;
-        friendPickerController = [[FBFriendPickerViewController alloc] init];
-        friendPickerController.title = @"Pick Friend";
-        friendPickerController.delegate = self;
-//        friendPickerController.
-        [friendPickerController loadData];
-        [self presentViewController:friendPickerController animated:YES completion:nil];
-    }];
-    
-
-//    [self.navigationController pushViewController:friendPickerController animated:YES];
-}
-
--(void)facebookViewControllerDoneWasPressed:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
--(void)facebookViewControllerCancelWasPressed:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
--(BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUser>)user{
-    
-    return YES;
-}
 
 @end

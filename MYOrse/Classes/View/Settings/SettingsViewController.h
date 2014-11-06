@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <XMPPFramework/XMPP.h>
 
-@interface SettingsViewController : UIViewController < FBFriendPickerDelegate >
+@interface SettingsViewController : UIViewController < XMPPStreamDelegate >
 
 @end
