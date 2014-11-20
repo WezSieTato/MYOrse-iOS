@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		12E5A89AEB801B6D74B5CB2C /* libPods-MYOrse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */; };
 		6589E1F61A0972A200687054 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6589E1F11A0972A200687054 /* AppDelegate.m */; };
-		6589E1FD1A09846A00687054 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6589E1FC1A09846A00687054 /* StartViewController.m */; };
-		6589E2001A0984A900687054 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6589E1FF1A0984A900687054 /* SettingsViewController.m */; };
 		65D2355719FD6A2200CF8A81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D2355619FD6A2200CF8A81 /* main.m */; };
 		65D2356019FD6A2200CF8A81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D2355E19FD6A2200CF8A81 /* Main.storyboard */; };
 		65D2356219FD6A2200CF8A81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D2356119FD6A2200CF8A81 /* Images.xcassets */; };
 		65D2356519FD6A2200CF8A81 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D2356319FD6A2200CF8A81 /* LaunchScreen.xib */; };
 		65D2357119FD6A2200CF8A81 /* MYOrseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D2357019FD6A2200CF8A81 /* MYOrseTests.m */; };
+		65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2001A1D3A6200046EBC /* LoginViewController.m */; };
+		65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2041A1D447200046EBC /* GTalkConnection.m */; };
+		65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2091A1D5CE500046EBC /* Constants.m */; };
+		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +34,6 @@
 		5651090CBB8242C312B9129E /* Pods-MYOrse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYOrse.release.xcconfig"; path = "Pods/Target Support Files/Pods-MYOrse/Pods-MYOrse.release.xcconfig"; sourceTree = "<group>"; };
 		6589E1F01A0972A200687054 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6589E1F11A0972A200687054 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6589E1FB1A09846A00687054 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
-		6589E1FC1A09846A00687054 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
-		6589E1FE1A0984A900687054 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		6589E1FF1A0984A900687054 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		65D2355119FD6A2200CF8A81 /* MYOrse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYOrse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D2355519FD6A2200CF8A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D2355619FD6A2200CF8A81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +43,14 @@
 		65D2356A19FD6A2200CF8A81 /* MYOrseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYOrseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D2356F19FD6A2200CF8A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D2357019FD6A2200CF8A81 /* MYOrseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYOrseTests.m; sourceTree = "<group>"; };
+		65E1B1FF1A1D3A6200046EBC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		65E1B2001A1D3A6200046EBC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		65E1B2031A1D447200046EBC /* GTalkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkConnection.h; sourceTree = "<group>"; };
+		65E1B2041A1D447200046EBC /* GTalkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkConnection.m; sourceTree = "<group>"; };
+		65E1B2071A1D5C6500046EBC /* GTalkXMPP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTalkXMPP.h; sourceTree = "<group>"; };
+		65E1B2081A1D5CE500046EBC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		65E1B2091A1D5CE500046EBC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		65E1B20B1A1D5E3100046EBC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		69F6BCAD51640ABEDF67D445 /* Pods-MYOrse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYOrse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYOrse/Pods-MYOrse.debug.xcconfig"; sourceTree = "<group>"; };
 		D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MYOrse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +79,9 @@
 			children = (
 				6589E1F01A0972A200687054 /* AppDelegate.h */,
 				6589E1F11A0972A200687054 /* AppDelegate.m */,
+				65E1B2081A1D5CE500046EBC /* Constants.h */,
+				65E1B2091A1D5CE500046EBC /* Constants.m */,
+				65E1B2021A1D444800046EBC /* Connection */,
 				6589E1F81A09846A00687054 /* View */,
 			);
 			path = Classes;
@@ -81,28 +90,9 @@
 		6589E1F81A09846A00687054 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6589E1F91A09846A00687054 /* Settings */,
-				6589E1FA1A09846A00687054 /* Start */,
+				65E1B1FE1A1D3A6200046EBC /* Login */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		6589E1F91A09846A00687054 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				6589E1FE1A0984A900687054 /* SettingsViewController.h */,
-				6589E1FF1A0984A900687054 /* SettingsViewController.m */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		6589E1FA1A09846A00687054 /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				6589E1FB1A09846A00687054 /* StartViewController.h */,
-				6589E1FC1A09846A00687054 /* StartViewController.m */,
-			);
-			path = Start;
 			sourceTree = "<group>";
 		};
 		65D2354819FD6A2200CF8A81 = {
@@ -132,6 +122,7 @@
 				65D2355E19FD6A2200CF8A81 /* Main.storyboard */,
 				65D2356119FD6A2200CF8A81 /* Images.xcassets */,
 				65D2356319FD6A2200CF8A81 /* LaunchScreen.xib */,
+				65E1B20B1A1D5E3100046EBC /* Localizable.strings */,
 				65D2355419FD6A2200CF8A81 /* Supporting Files */,
 			);
 			path = MYOrse;
@@ -161,6 +152,25 @@
 				65D2356F19FD6A2200CF8A81 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65E1B1FE1A1D3A6200046EBC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65E1B1FF1A1D3A6200046EBC /* LoginViewController.h */,
+				65E1B2001A1D3A6200046EBC /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		65E1B2021A1D444800046EBC /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				65E1B2071A1D5C6500046EBC /* GTalkXMPP.h */,
+				65E1B2031A1D447200046EBC /* GTalkConnection.h */,
+				65E1B2041A1D447200046EBC /* GTalkConnection.m */,
+			);
+			path = Connection;
 			sourceTree = "<group>";
 		};
 		7F5FD363B5F04AA94AA8DD56 /* Pods */ = {
@@ -264,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D2356019FD6A2200CF8A81 /* Main.storyboard in Resources */,
+				65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */,
 				65D2356519FD6A2200CF8A81 /* LaunchScreen.xib in Resources */,
 				65D2356219FD6A2200CF8A81 /* Images.xcassets in Resources */,
 			);
@@ -316,10 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6589E1FD1A09846A00687054 /* StartViewController.m in Sources */,
+				65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */,
 				6589E1F61A0972A200687054 /* AppDelegate.m in Sources */,
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
-				6589E2001A0984A900687054 /* SettingsViewController.m in Sources */,
+				65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */,
+				65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

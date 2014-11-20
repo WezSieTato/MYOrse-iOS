@@ -1,78 +1,149 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cgd-ll-rBp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="325" y="308"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0lz-73-RsD">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" id="cgd-ll-rBp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" navigationBarHidden="YES" id="cgd-ll-rBp" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0a7-df-6Sr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4Ct-EJ-SwP" kind="relationship" relationship="rootViewController" id="5Yi-CV-0yf"/>
+                        <segue destination="9wE-eo-DkG" kind="relationship" relationship="rootViewController" id="uWt-lL-Gev"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJ8-9h-ljq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="1050"/>
         </scene>
-        <!--MYOrse-->
-        <scene sceneID="Aq3-eO-8Y4">
+        <!--Login View Controller-->
+        <scene sceneID="ehX-V9-o6y">
             <objects>
-                <viewController id="4Ct-EJ-SwP" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController id="9wE-eo-DkG" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Cr-Ta-Gyg"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lpu-to-eAO"/>
+                        <viewControllerLayoutGuide type="top" id="T5n-uG-yvP"/>
+                        <viewControllerLayoutGuide type="bottom" id="gqZ-dn-Kyp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0dV-IP-3aw">
+                    <view key="view" contentMode="scaleToFill" id="8c1-0o-7AW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-AC-5CW">
-                                <rect key="frame" x="37" y="104" width="129" height="30"/>
-                                <state key="normal" title="Kalibruj nadawce">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="calibrate:" destination="4Ct-EJ-SwP" eventType="touchUpInside" id="PUL-nQ-F53"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYOrse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgC-j3-FBH">
+                                <rect key="frame" x="246" y="113" width="108" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.50334821429999999" green="0.50334821429999999" blue="0.50334821429999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg7-QS-JQ5">
+                                <rect key="frame" x="160" y="181" width="280" height="104"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tdA-5Q-xZJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hasło" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NGe-He-os7">
+                                        <rect key="frame" x="0.0" y="29" width="280" height="19"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cm0-go-tvX">
+                                        <rect key="frame" x="0.0" y="58" width="280" height="1"/>
+                                        <color key="backgroundColor" red="0.89726251219999997" green="0.89592523599999996" blue="0.91928411990000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="lhW-S0-Hqv"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1b-27-Ee4">
+                                        <rect key="frame" x="205" y="69" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Zaloguj się">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="9wE-eo-DkG" eventType="touchUpInside" id="iry-XC-SVx"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-GP-Kju">
+                                        <rect key="frame" x="0.0" y="68" width="51" height="31"/>
+                                    </switch>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-aO-hqH">
+                                        <rect key="frame" x="232" y="74" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m45-vb-yy4">
+                                        <rect key="frame" x="54" y="69" width="115" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Zapamiętaj mnie">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PyX-GP-Kju" secondAttribute="bottom" constant="5" id="584-R0-KGM"/>
+                                    <constraint firstItem="Cm0-go-tvX" firstAttribute="leading" secondItem="Fg7-QS-JQ5" secondAttribute="leading" id="7GF-FA-KI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="g1b-27-Ee4" secondAttribute="trailing" id="9bs-6Z-v9u"/>
+                                    <constraint firstAttribute="bottom" secondItem="g1b-27-Ee4" secondAttribute="bottom" constant="5" id="J1E-fS-Sea"/>
+                                    <constraint firstItem="NGe-He-os7" firstAttribute="top" secondItem="tdA-5Q-xZJ" secondAttribute="bottom" constant="10" id="MDw-Vi-W1a"/>
+                                    <constraint firstItem="m45-vb-yy4" firstAttribute="leading" secondItem="PyX-GP-Kju" secondAttribute="trailing" constant="5" id="Olt-3a-89h"/>
+                                    <constraint firstItem="tdA-5Q-xZJ" firstAttribute="top" secondItem="Fg7-QS-JQ5" secondAttribute="top" id="Qfr-z1-eOQ"/>
+                                    <constraint firstItem="g1b-27-Ee4" firstAttribute="top" secondItem="Cm0-go-tvX" secondAttribute="bottom" constant="10" id="TXf-6b-72C"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cm0-go-tvX" secondAttribute="trailing" id="TnO-vA-dxU"/>
+                                    <constraint firstItem="m45-vb-yy4" firstAttribute="top" secondItem="Cm0-go-tvX" secondAttribute="bottom" constant="10" id="W4b-R4-H4a"/>
+                                    <constraint firstItem="W1J-aO-hqH" firstAttribute="centerY" secondItem="g1b-27-Ee4" secondAttribute="centerY" id="fAv-Oa-FdE"/>
+                                    <constraint firstAttribute="trailing" secondItem="tdA-5Q-xZJ" secondAttribute="trailing" id="fSY-68-Tz0"/>
+                                    <constraint firstItem="Cm0-go-tvX" firstAttribute="top" secondItem="NGe-He-os7" secondAttribute="bottom" constant="10" id="g12-Z2-T36"/>
+                                    <constraint firstItem="PyX-GP-Kju" firstAttribute="leading" secondItem="Fg7-QS-JQ5" secondAttribute="leading" id="h8V-Nk-2uY"/>
+                                    <constraint firstAttribute="width" constant="280" id="hyw-nM-InB"/>
+                                    <constraint firstItem="tdA-5Q-xZJ" firstAttribute="leading" secondItem="Fg7-QS-JQ5" secondAttribute="leading" id="j8j-hW-Ic5"/>
+                                    <constraint firstAttribute="bottom" secondItem="m45-vb-yy4" secondAttribute="bottom" constant="5" id="lau-mZ-ixb"/>
+                                    <constraint firstItem="W1J-aO-hqH" firstAttribute="centerX" secondItem="g1b-27-Ee4" secondAttribute="centerX" id="qa8-x8-xeh"/>
+                                    <constraint firstItem="NGe-He-os7" firstAttribute="leading" secondItem="Fg7-QS-JQ5" secondAttribute="leading" id="sH2-qy-Qn9"/>
+                                    <constraint firstAttribute="trailing" secondItem="NGe-He-os7" secondAttribute="trailing" id="sru-Cp-gMh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Fg7-QS-JQ5" secondAttribute="centerY" multiplier="1.2" constant="20" id="0SO-1M-HPN"/>
+                            <constraint firstItem="Fg7-QS-JQ5" firstAttribute="top" secondItem="AgC-j3-FBH" secondAttribute="bottom" constant="30" id="LW4-ez-VPD"/>
+                            <constraint firstAttribute="centerX" secondItem="Fg7-QS-JQ5" secondAttribute="centerX" id="X9s-lT-8gY"/>
+                            <constraint firstAttribute="centerX" secondItem="AgC-j3-FBH" secondAttribute="centerX" id="p59-rd-MTO"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HFO-OW-rrh" appends="YES" id="9aH-5a-wOk"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="MYOrse" id="x5u-Ju-f73">
-                        <barButtonItem key="leftBarButtonItem" title="Wyloguj" id="bk1-1k-fUq">
-                            <connections>
-                                <action selector="logout:" destination="4Ct-EJ-SwP" id="dGo-lM-zeO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="vqg-8A-oqT"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="W1J-aO-hqH" id="8vv-2h-WPy"/>
+                        <outlet property="loginButton" destination="g1b-27-Ee4" id="JCs-uC-qrj"/>
+                        <outlet property="passwordTextField" destination="NGe-He-os7" id="pgH-EE-sSf"/>
+                        <outlet property="usernameTextField" destination="tdA-5Q-xZJ" id="zaf-fM-ivE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VJk-sR-i3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQz-tW-Y3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HFO-OW-rrh">
+                    <connections>
+                        <action selector="viewTapped:" destination="9wE-eo-DkG" id="X0g-vM-9js"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1120" y="1054"/>
+            <point key="canvasLocation" x="1098" y="1050"/>
         </scene>
     </scenes>
 </document>
