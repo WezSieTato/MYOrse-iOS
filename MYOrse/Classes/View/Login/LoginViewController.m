@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
-
-
 @end
 
 @implementation LoginViewController
@@ -64,6 +62,8 @@
     
     [[GTalkConnection sharedInstance] loginWithUsername:_usernameTextField.text
                                             andPassword:_passwordTextField.text
+                                            //tu odpowiedniego boola wstawic
+                                               remember:NO
                                              andHandler:^(BOOL succes) {
                                                  [_loginButton setHidden:NO];
                                                  [_loadingIndicator stopAnimating];

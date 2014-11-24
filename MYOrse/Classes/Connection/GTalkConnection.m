@@ -8,6 +8,7 @@
 
 #import "GTalkConnection.h"
 #import "GTalkXMPP.h"
+#import "GTalkLoginKeeper.h"
 
 #define GCHAT_DOMAIN @"talk.google.com"
 #define GCHAT_PORT 5222
@@ -96,7 +97,16 @@ static GTalkConnection *SINGLETON = nil;
     return ![self.xmppStream isDisconnected];
 }
 
+-(BOOL)loginWithLastLoginHandler:(GTalkConnectionLoginHandler)handler{
+    GTalkLoginKeeper* keeper = [GTalkLoginKeeper new];
+    if(!keeper.isRemember)
+        return true;
+    
+    return [self loginWithUsername:keeper.login andPassword:keeper.password remember:NO andHandler:handler];
+}
+
 - (BOOL)loginWithUsername:(NSString *)username andPassword:(NSString *)password
+                 remember:(BOOL)remember
                andHandler:(GTalkConnectionLoginHandler)handler
 {
     NSLog(@"connect xmpp");
@@ -125,6 +135,14 @@ static GTalkConnection *SINGLETON = nil;
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     NSLog(@"connected!");
+    
+    if(remember){
+        GTalkLoginKeeper* keeper = [ GTalkLoginKeeper new];
+        keeper.login = username;
+        keeper.password = password;
+        [keeper saveToDisk];
+    }
+    
     return YES;
 }
 

@@ -18,7 +18,9 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
  */
 + (GTalkConnection*)sharedInstance;
 
+-(BOOL)loginWithLastLoginHandler:(GTalkConnectionLoginHandler)handler;
 - (BOOL)loginWithUsername:(NSString *)username andPassword:(NSString *)password
+                 remember:(BOOL)remember
                andHandler:(GTalkConnectionLoginHandler)handler;
 
 @end
