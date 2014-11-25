@@ -23,7 +23,7 @@
 //
 //// Notifications
 //extern NSString* const NOTIFICATION_PRESENCE_UPDATE;
-//extern NSString* const NOTIFICATION_MESSAGE_RECEIVED;
+extern NSString* const NOTIFICATION_MESSAGE_RECEIVED;
 //extern NSString* const NOTIFICATION_CONNECTION_CHANGED;
 //
 //// Fonts

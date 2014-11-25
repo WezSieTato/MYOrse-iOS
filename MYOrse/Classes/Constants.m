@@ -23,7 +23,7 @@
 //
 //// Notifications
 //NSString* const NOTIFICATION_PRESENCE_UPDATE = @"notificationStatusUpdate";
-//NSString* const NOTIFICATION_MESSAGE_RECEIVED = @"notificationMessageReceived";
+NSString* const NOTIFICATION_MESSAGE_RECEIVED = @"notificationMessageReceived";
 //NSString* const NOTIFICATION_CONNECTION_CHANGED = @"notificationConnectionChanged";
 //
 //// Fonts

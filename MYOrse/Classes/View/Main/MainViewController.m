@@ -12,6 +12,7 @@
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *lblUser;
+@property (weak, nonatomic) IBOutlet UILabel *lblOtherUser;
 
 @end
 
@@ -24,12 +25,25 @@
     _lblUser.text = gtalk.username;
     
 }
+- (IBAction)switchedWidocznosc:(UISwitch *)sender {
+    [[GTalkConnection sharedInstance] setVisible:[sender isOn]];
+}
 
 -(IBAction)logout:(id)sender{
     [[GTalkConnection sharedInstance] logout];
     
     UIViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
     [self presentViewController:next animated:YES completion:nil];
+}
+
+-(void)buddyPickedWithEmail:(NSString *)email{
+    _lblOtherUser.text = email ? : @"";
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.destinationViewController isKindOfClass:[BuddiesTableViewController class]]){
+        ((BuddiesTableViewController*)segue.destinationViewController).delegate = self;
+    }
 }
 
 @end

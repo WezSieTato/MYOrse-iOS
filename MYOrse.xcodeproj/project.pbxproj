@@ -19,6 +19,9 @@
 		65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2041A1D447200046EBC /* GTalkConnection.m */; };
 		65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2091A1D5CE500046EBC /* Constants.m */; };
 		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
+		D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */; };
+		D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */; };
+		D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */; };
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
 		D3AFA2B11A24831B001D5E64 /* MSKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AFA2B01A24831B001D5E64 /* MSKeychainManager.m */; };
 		D3AFA2B41A248479001D5E64 /* MSPair.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AFA2B31A248479001D5E64 /* MSPair.m */; };
@@ -58,6 +61,13 @@
 		65E1B2091A1D5CE500046EBC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		65E1B20B1A1D5E3100046EBC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		69F6BCAD51640ABEDF67D445 /* Pods-MYOrse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYOrse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYOrse/Pods-MYOrse.debug.xcconfig"; sourceTree = "<group>"; };
+		D32B8BD71A24ACB60088AE89 /* BuddiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddiesTableViewController.h; sourceTree = "<group>"; };
+		D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddiesTableViewController.m; sourceTree = "<group>"; };
+		D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPJID+GTalk.h"; sourceTree = "<group>"; };
+		D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPJID+GTalk.m"; sourceTree = "<group>"; };
+		D32B8BDE1A24BA470088AE89 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPPresence+GTalk.h"; sourceTree = "<group>"; };
+		D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPPresence+GTalk.m"; sourceTree = "<group>"; };
 		D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkLoginKeeper.h; sourceTree = "<group>"; };
 		D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkLoginKeeper.m; sourceTree = "<group>"; };
 		D390FED01A2319A6005B1D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -101,6 +111,7 @@
 			children = (
 				6589E1F01A0972A200687054 /* AppDelegate.h */,
 				6589E1F11A0972A200687054 /* AppDelegate.m */,
+				D32B8BDE1A24BA470088AE89 /* PrefixHeader.pch */,
 				65E1B2081A1D5CE500046EBC /* Constants.h */,
 				65E1B2091A1D5CE500046EBC /* Constants.m */,
 				D3AFA2AE1A248303001D5E64 /* Ogolne */,
@@ -113,6 +124,7 @@
 		6589E1F81A09846A00687054 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D32B8BD61A24AC980088AE89 /* BuddyList */,
 				654A21821A20BB0E00E475D0 /* Main */,
 				65E1B1FE1A1D3A6200046EBC /* Login */,
 			);
@@ -190,6 +202,7 @@
 		65E1B2021A1D444800046EBC /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				D32B8BDA1A24B2D70088AE89 /* XMPPCategories */,
 				65E1B2071A1D5C6500046EBC /* GTalkXMPP.h */,
 				D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */,
 				D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */,
@@ -215,6 +228,26 @@
 				D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D32B8BD61A24AC980088AE89 /* BuddyList */ = {
+			isa = PBXGroup;
+			children = (
+				D32B8BD71A24ACB60088AE89 /* BuddiesTableViewController.h */,
+				D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */,
+			);
+			path = BuddyList;
+			sourceTree = "<group>";
+		};
+		D32B8BDA1A24B2D70088AE89 /* XMPPCategories */ = {
+			isa = PBXGroup;
+			children = (
+				D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */,
+				D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */,
+				D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */,
+				D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */,
+			);
+			path = XMPPCategories;
 			sourceTree = "<group>";
 		};
 		D3AFA2AE1A248303001D5E64 /* Ogolne */ = {
@@ -367,7 +400,10 @@
 			files = (
 				65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */,
 				654A21851A20BB2900E475D0 /* MainViewController.m in Sources */,
+				D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */,
+				D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */,
 				6589E1F61A0972A200687054 /* AppDelegate.m in Sources */,
+				D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */,
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
 				65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */,
 				D3AFA2B41A248479001D5E64 /* MSPair.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BuddiesTableViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController < BuddyPickerDelegate >
 
 @end

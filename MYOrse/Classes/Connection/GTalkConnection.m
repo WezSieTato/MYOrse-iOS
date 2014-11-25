@@ -10,10 +10,17 @@
 #import "GTalkXMPP.h"
 #import "GTalkLoginKeeper.h"
 
+#import "XMPPJID+GTalk.h"
+#import "Constants.h"
+#import "MSPair.h"
+#import "XMPPPresence+GTalk.h"
+
 #define GCHAT_DOMAIN @"talk.google.com"
 #define GCHAT_PORT 5222
 
-@interface GTalkConnection () < XMPPStreamDelegate >
+@interface GTalkConnection () < XMPPStreamDelegate >{
+    NSMutableSet* _buddysArray;
+}
 
 @property (strong, nonatomic) XMPPStream *xmppStream;
 @property (strong, nonatomic) XMPPRoster *roster;
@@ -51,7 +58,7 @@ static GTalkConnection *SINGLETON = nil;
 - (id) init
 {
     if (self = [super init]) {
-       
+        _buddysArray = [NSMutableArray new];
     }
     return self;
 }
@@ -153,9 +160,20 @@ static GTalkConnection *SINGLETON = nil;
 
 - (void)goOffline
 {
-    XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
+    XMPPPresence *presence = [XMPPPresence unavailablePresence];
     NSLog(@"goOffline: %@", presence);
     [self.xmppStream sendElement:presence];
+}
+
+-(void)addBuddy:(XMPPJID*)buddy{
+    if([_buddysArray containsObject:[buddy bare]])
+        return;
+    
+    [_buddysArray addObject:[buddy bare]];
+}
+
+-(void)removeBuddy:(XMPPJID*)buddy{
+    [_buddysArray removeObject:[buddy bare]];
 }
 
 #pragma mark - Properties
@@ -172,8 +190,23 @@ static GTalkConnection *SINGLETON = nil;
     return [[GTalkLoginKeeper new] isRemember];
 }
 
+-(BOOL)isVisible{
+    return self.xmppStream.myPresence.isVisible;
+}
+
+-(void)setVisible:(BOOL)visible{
+    if(self.isVisible == visible)
+        return;
+    XMPPPresence *presence = visible ? [XMPPPresence presence] : [XMPPPresence invisiblePresence];
+    [self.xmppStream sendElement:presence];
+}
+
 -(NSString*)username{
-    return [self.xmppStream.myJID.user stringByAppendingFormat:@"@%@", self.xmppStream.myJID.domain];
+    return self.xmppStream.myJID.bare;
+}
+
+-(NSArray*)buddyList{
+    return [[_buddysArray allObjects] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 
 #pragma mark - XMPPStreamDelegate
@@ -241,12 +274,33 @@ static GTalkConnection *SINGLETON = nil;
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-
+    XMPPJID* user = [presence from];
+    if(![user isEqualToJID:[sender myJID]]){
+        
+        if ([presence isAvailable]) {
+            [self addBuddy:user];
+            
+        } else if ([presence isUnavailable]) {
+            [self removeBuddy:user];
+            
+        }
+    }
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    if ([message body] && [[message type] isEqualToString:XMPP_MESSAGE_TYPE_CHAT])
+    {
+        MSPair* pair = [MSPair new];
+        pair.first = [[message from] bare];
+        pair.second = [message body];
+        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:NOTIFICATION_MESSAGE_RECEIVED
+         object:pair userInfo:nil];
+        NSLog(@"Siema: %@", message.body);
+    }
 }
 
 - (void)xmppStream:(XMPPStream *)sender willSecureWithSettings:(NSMutableDictionary *)settings
