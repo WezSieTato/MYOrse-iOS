@@ -69,7 +69,7 @@
                                                  [_loadingIndicator stopAnimating];
                                                  
                                                  if(succes){
-                                                     
+                                                     [self loginSucces];
                                                  } else {
                                                      [self loginFailed];
                                                  }
@@ -83,6 +83,11 @@
                                delegate:nil
                       cancelButtonTitle:NSLocalizedString(@"POPUP_CONFIRM_BUTTON_TITLE", nil)
                       otherButtonTitles:nil] show];
+}
+
+-(void)loginSucces{
+    UIViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
+    [self presentViewController:next animated:YES completion:nil];
 }
 
 - (IBAction)viewTapped:(UITapGestureRecognizer *)gesture
