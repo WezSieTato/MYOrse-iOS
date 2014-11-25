@@ -88,14 +88,6 @@ static GTalkConnection *SINGLETON = nil;
     }
 }
 
-- (BOOL)isConnected
-{
-    NSLog(@"isConnected: %i", ![self.xmppStream isDisconnected]);
-    
-    // If stream is not disconnected, it is either establishing connection or connected
-    return ![self.xmppStream isDisconnected];
-}
-
 - (BOOL)loginWithUsername:(NSString *)username andPassword:(NSString *)password
                andHandler:(GTalkConnectionLoginHandler)handler
 {
@@ -128,6 +120,11 @@ static GTalkConnection *SINGLETON = nil;
     return YES;
 }
 
+-(void)logout{
+    [self goOffline];
+    [self.xmppStream disconnect];
+}
+
 - (void)goOnline
 {
     XMPPPresence *presence = [XMPPPresence presence];
@@ -142,6 +139,19 @@ static GTalkConnection *SINGLETON = nil;
     [self.xmppStream sendElement:presence];
 }
 
+#pragma mark - Properties
+
+-(BOOL)isConnected
+{
+    NSLog(@"isConnected: %i", ![self.xmppStream isDisconnected]);
+    
+    // If stream is not disconnected, it is either establishing connection or connected
+    return ![self.xmppStream isDisconnected];
+}
+
+-(NSString*)username{
+    return [self.xmppStream.myJID.user stringByAppendingFormat:@"@%@", self.xmppStream.myJID.domain];
+}
 
 #pragma mark - XMPPStreamDelegate
 

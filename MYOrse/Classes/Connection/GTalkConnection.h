@@ -12,6 +12,9 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 
 @interface GTalkConnection : NSObject
 
+@property (readonly, nonatomic) NSString* username;
+@property (readonly, nonatomic) BOOL isConnected;
+
 /**
  * gets singleton object.
  * @return singleton
@@ -20,5 +23,6 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 
 - (BOOL)loginWithUsername:(NSString *)username andPassword:(NSString *)password
                andHandler:(GTalkConnectionLoginHandler)handler;
+-(void)logout;
 
 @end
