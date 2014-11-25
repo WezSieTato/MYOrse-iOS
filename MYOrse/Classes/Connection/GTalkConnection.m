@@ -139,6 +139,7 @@ static GTalkConnection *SINGLETON = nil;
 }
 
 -(void)logout{
+    [[GTalkLoginKeeper new] eraseData];
     [self goOffline];
     [self.xmppStream disconnect];
 }
@@ -165,6 +166,10 @@ static GTalkConnection *SINGLETON = nil;
     
     // If stream is not disconnected, it is either establishing connection or connected
     return ![self.xmppStream isDisconnected];
+}
+
+-(BOOL)isRemember{
+    return [[GTalkLoginKeeper new] isRemember];
 }
 
 -(NSString*)username{

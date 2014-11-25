@@ -14,6 +14,7 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 
 @property (readonly, nonatomic) NSString* username;
 @property (readonly, nonatomic) BOOL isConnected;
+@property (readonly, nonatomic) BOOL isRemember;
 
 /**
  * gets singleton object.

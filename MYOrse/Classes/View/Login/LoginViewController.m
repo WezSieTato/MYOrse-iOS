@@ -16,24 +16,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (weak, nonatomic) IBOutlet UISwitch *swtRemember;
+
+@property (readonly) GTalkConnectionLoginHandler loginHandler;
 
 @end
 
 @implementation LoginViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    _usernameTextField.delegate = self;
-    _passwordTextField.delegate = self;
-    [_loginButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (BOOL)isValidInputs
 {
@@ -52,29 +41,22 @@
     
     return YES;
 }
-#pragma mark - Event Handlers
 
-- (IBAction)loginButtonTapped:(UIButton *)sender
-{
+#pragma mark - Login
+
+-(void)gtalkWillLogin{
     [self.view endEditing:true];
     [_loginButton setHidden:YES];
     [_loadingIndicator startAnimating];
-    
-    [[GTalkConnection sharedInstance] loginWithUsername:_usernameTextField.text
-                                            andPassword:_passwordTextField.text
-                                            //tu odpowiedniego boola wstawic
-                                               remember:NO
-                                             andHandler:^(BOOL succes) {
-                                                 [_loginButton setHidden:NO];
-                                                 [_loadingIndicator stopAnimating];
-                                                 
-                                                 if(succes){
-                                                     [self loginSucces];
-                                                 } else {
-                                                     [self loginFailed];
-                                                 }
-                                             }];
-    
+    [self.view setUserInteractionEnabled:NO];
+}
+
+-(void)loginWithUsername:(NSString*)login andPassword:(NSString *)password remember:(BOOL)remember{
+    [self gtalkWillLogin];
+    [[GTalkConnection sharedInstance] loginWithUsername:login
+                                            andPassword:password
+                                               remember:remember
+                                             andHandler:self.loginHandler];
 }
 
 -(void)loginFailed{
@@ -83,11 +65,55 @@
                                delegate:nil
                       cancelButtonTitle:NSLocalizedString(@"POPUP_CONFIRM_BUTTON_TITLE", nil)
                       otherButtonTitles:nil] show];
+    [self.view setUserInteractionEnabled:YES];
 }
 
 -(void)loginSucces{
     UIViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
     [self presentViewController:next animated:YES completion:nil];
+}
+
+-(GTalkConnectionLoginHandler)loginHandler{
+    return ^(BOOL succes) {
+        [_loginButton setHidden:NO];
+        [_loadingIndicator stopAnimating];
+        
+        if(succes){
+            [self loginSucces];
+        } else {
+            [self loginFailed];
+        }
+    };
+}
+
+#pragma mark - View States
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    _usernameTextField.delegate = self;
+    _passwordTextField.delegate = self;
+    [_loginButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if ([[GTalkConnection sharedInstance] isRemember]) {
+        [self gtalkWillLogin];
+        [[GTalkConnection sharedInstance] loginWithLastLoginHandler:self.loginHandler];
+    }
+        
+}
+
+#pragma mark - Event Handlers
+
+- (IBAction)loginButtonTapped:(UIButton *)sender
+{
+    [self loginWithUsername:_usernameTextField.text
+                andPassword:_passwordTextField.text
+                   remember:_swtRemember.isOn];
+    
 }
 
 - (IBAction)viewTapped:(UITapGestureRecognizer *)gesture

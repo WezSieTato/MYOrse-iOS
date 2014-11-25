@@ -20,6 +20,8 @@
 		65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2091A1D5CE500046EBC /* Constants.m */; };
 		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
+		D3AFA2B11A24831B001D5E64 /* MSKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AFA2B01A24831B001D5E64 /* MSKeychainManager.m */; };
+		D3AFA2B41A248479001D5E64 /* MSPair.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AFA2B31A248479001D5E64 /* MSPair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkLoginKeeper.h; sourceTree = "<group>"; };
 		D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkLoginKeeper.m; sourceTree = "<group>"; };
 		D390FED01A2319A6005B1D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3AFA2AF1A24831B001D5E64 /* MSKeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSKeychainManager.h; sourceTree = "<group>"; };
+		D3AFA2B01A24831B001D5E64 /* MSKeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSKeychainManager.m; sourceTree = "<group>"; };
+		D3AFA2B21A248479001D5E64 /* MSPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPair.h; sourceTree = "<group>"; };
+		D3AFA2B31A248479001D5E64 /* MSPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPair.m; sourceTree = "<group>"; };
 		D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MYOrse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,7 @@
 				6589E1F11A0972A200687054 /* AppDelegate.m */,
 				65E1B2081A1D5CE500046EBC /* Constants.h */,
 				65E1B2091A1D5CE500046EBC /* Constants.m */,
+				D3AFA2AE1A248303001D5E64 /* Ogolne */,
 				65E1B2021A1D444800046EBC /* Connection */,
 				6589E1F81A09846A00687054 /* View */,
 			);
@@ -208,6 +215,17 @@
 				D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3AFA2AE1A248303001D5E64 /* Ogolne */ = {
+			isa = PBXGroup;
+			children = (
+				D3AFA2AF1A24831B001D5E64 /* MSKeychainManager.h */,
+				D3AFA2B01A24831B001D5E64 /* MSKeychainManager.m */,
+				D3AFA2B21A248479001D5E64 /* MSPair.h */,
+				D3AFA2B31A248479001D5E64 /* MSPair.m */,
+			);
+			path = Ogolne;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +370,8 @@
 				6589E1F61A0972A200687054 /* AppDelegate.m in Sources */,
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
 				65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */,
+				D3AFA2B41A248479001D5E64 /* MSPair.m in Sources */,
+				D3AFA2B11A24831B001D5E64 /* MSKeychainManager.m in Sources */,
 				65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */,
 				D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */,
 			);
@@ -429,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,6 +498,7 @@
 			baseConfigurationReference = 69F6BCAD51640ABEDF67D445 /* Pods-MYOrse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MYOrse/Info.plist;
@@ -492,6 +513,7 @@
 			baseConfigurationReference = 5651090CBB8242C312B9129E /* Pods-MYOrse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MYOrse/Info.plist;
