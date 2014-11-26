@@ -31,5 +31,5 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
                  remember:(BOOL)remember
                andHandler:(GTalkConnectionLoginHandler)handler;
 -(void)logout;
-
+-(void)sendMessageTo:(NSString*)email withBody:(NSString*)body;
 @end

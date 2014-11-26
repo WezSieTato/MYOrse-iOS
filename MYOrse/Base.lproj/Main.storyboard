@@ -298,7 +298,11 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7k5-vo-0M2"/>
-                        <barButtonItem title="Uruchom odbiornik" id="I63-L3-zw7"/>
+                        <barButtonItem title="Uruchom odbiornik" id="I63-L3-zw7">
+                            <connections>
+                                <action selector="startStopReceiver:" destination="5ck-aV-i11" id="dLU-zj-FYU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="h5c-ws-pLs"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="MYOrse" id="156-ln-ENJ">
@@ -310,6 +314,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnPick" destination="iyX-eN-DNq" id="UZT-Y1-Qyg"/>
+                        <outlet property="btnStart" destination="I63-L3-zw7" id="OcQ-Hy-Wdk"/>
                         <outlet property="lblOtherUser" destination="WuP-sp-jbi" id="G4A-xD-prE"/>
                         <outlet property="lblUser" destination="go1-B0-Wbg" id="rNB-vK-hZH"/>
                     </connections>

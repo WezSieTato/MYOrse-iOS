@@ -19,7 +19,7 @@
 #define GCHAT_PORT 5222
 
 @interface GTalkConnection () < XMPPStreamDelegate >{
-    NSMutableSet* _buddysArray;
+    NSMutableDictionary* _buddysArray;
 }
 
 @property (strong, nonatomic) XMPPStream *xmppStream;
@@ -58,7 +58,7 @@ static GTalkConnection *SINGLETON = nil;
 - (id) init
 {
     if (self = [super init]) {
-        _buddysArray = [NSMutableArray new];
+        _buddysArray = [NSMutableDictionary new];
     }
     return self;
 }
@@ -151,6 +151,12 @@ static GTalkConnection *SINGLETON = nil;
     [self.xmppStream disconnect];
 }
 
+-(void)sendMessageTo:(NSString *)email withBody:(NSString *)body{
+    XMPPMessage *message = [[XMPPMessage alloc] initWithType:XMPP_MESSAGE_TYPE_CHAT to:_buddysArray[email]];
+    [message addBody:body];
+    [self.xmppStream sendElement:message];
+}
+
 - (void)goOnline
 {
     XMPPPresence *presence = [XMPPPresence presence];
@@ -166,14 +172,14 @@ static GTalkConnection *SINGLETON = nil;
 }
 
 -(void)addBuddy:(XMPPJID*)buddy{
-    if([_buddysArray containsObject:[buddy bare]])
+    if([_buddysArray objectForKey:[buddy bare]])
         return;
     
-    [_buddysArray addObject:[buddy bare]];
+    _buddysArray[[buddy bare]] = buddy;
 }
 
 -(void)removeBuddy:(XMPPJID*)buddy{
-    [_buddysArray removeObject:[buddy bare]];
+    [_buddysArray removeObjectForKey:[buddy bare]];
 }
 
 #pragma mark - Properties
@@ -206,7 +212,7 @@ static GTalkConnection *SINGLETON = nil;
 }
 
 -(NSArray*)buddyList{
-    return [[_buddysArray allObjects] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return [[_buddysArray allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 
 #pragma mark - XMPPStreamDelegate
