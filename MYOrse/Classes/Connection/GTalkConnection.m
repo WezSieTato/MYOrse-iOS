@@ -220,7 +220,8 @@ static GTalkConnection *SINGLETON = nil;
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
+    [self.xmppStream setEnableBackgroundingOnSocket:YES];
+
     NSError *error = nil;
     if (![[self xmppStream] authenticateWithPassword:self.tempPassword error:&error])
     {
@@ -312,6 +313,12 @@ static GTalkConnection *SINGLETON = nil;
     [settings setObject:[NSNull null] forKey:(NSString *)kCFStreamSSLPeerName];
 }
 
+-(void)xmppStream:(XMPPStream *)sender socketDidConnect:(GCDAsyncSocket *)socket{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    [sender setEnableBackgroundingOnSocket:YES];
+    
+}
 
 
 @end
