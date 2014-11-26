@@ -1,59 +1,11 @@
 
 
-
-// Main App Screen
-
-"APP_VIEW_TITLE" = "Contacts";
-"APP_NAVBAR_LOGIN_BUTTON_TITLE" = "Login";
-"APP_NAVBAR_LOGOUT_BUTTON_TITLE" = "Logout";
-"APP_CONTACTS_ONLINE_SECTION_TITLE" = "Online";
-"APP_CONTACTS_AWAY_SECTION_TITLE" = "Away";
-"APP_CONTACTS_BUSY_SECTION_TITLE" = "Busy";
-"APP_CONTACTS_OFFLINE_SECTION_TITLE" = "Offline";
-"APP_CONTACTS_SUBSCRIBE_REQUEST_TITLE" = "Friend Request";
-"APP_CONTACTS_SUBSCRIBE_REQUEST_MESSAGE" = "would like to add you to their contacts!";
-"APP_CONTACTS_SUBSCRIBE_REQUEST_CANCEL" = "Reject";
-"APP_CONTACTS_SUBSCRIBE_REQUEST_OK" = "Accept";
-"APP_CONTACTS_ADD_OK" = "Send Request";
-"APP_CONTACTS_ADD_TITLE" = "Add Contact";
-"APP_CONTACTS_ADD_MESSAGE" = "Enter email address you'd like to send a request to:";
-"APP_CONTACTS_ADD_CONFIRM_MESSAGE" = "Friend request sent!";
-
-
-// Login Screen
-
-"LOGIN_VIEW_TITLE" = "GChat";
-"LOGIN_NAVBAR_BACK_BUTTON_TITLE" = "Back";
-"LOGIN_SIGNIN_BUTTON_TITLE" = "Sign In";
-"LOGIN_TWOFACTOR_BUTTON_TITLE" = "Using Two-Factor Authentication?";
-"LOGIN_GOOGLEAPPS_BUTTON_TITLE" = "Using Google Apps?";
-"LOGIN_PERSIST_BUTTON_TITLE" = "Stay signed in";
-"LOGIN_USERNAME_FIELD_PLACEHOLDER" = "Email";
-"LOGIN_PASSWORD_FIELD_PLACEHOLDER" = "Password";
-
-
-// Chat Screen
-
-"CHAT_SEND_BUTTON_TITLE" = "Send";
-"CHAT_FROM_ME_TEXT" = "Me";
-
-
-// General
-
-"POPUP_ERROR_TITLE" = "Oops!";
-"POPUP_WARNING_TITLE" = "Warning!";
-"POPUP_CONFIRM_BUTTON_TITLE" = "Ok";
-"POPUP_CANCEL_BUTTON_TITLE" = "Anuluj";
-
-"PN_ACTION_TITLE" = "View";
-
-
-// Error Message
-
-"ERROR_REACHABILITY" = "Could not reach internet. Please check your connection.";
-"ERROR_CONNECT" = "Could not connect to server. Please check your connection.";
-"ERROR_CONNECTION_TIMEOUT" = "Could not connect to server! Please check your connection and login email.";
 "ERROR_CONNECTION_AUTH" = "Nie udało się zalogować! Sprawdź email i hasło.";
 "ERROR_INVALID_EMAIL" = "Nie prawidłowy format maila";
 "ERROR_BLANK_USERNAME" = "Pusty login";
 "ERROR_BLANK_PASSWORD" = "Puste hasło";
+
+"START_MYORSE_SERVICE" = "Uruchom odbiornik";
+"STOP_MYORSE_SERVICE" = "Zatrzymaj odbiornik";
+"START_MYORSE_MESSAGE" = "Twój rozmowca korzysta teraz z programu MYOrse, będzie odbieral twoje wiadomości w alfabecie Morse'a, dlatego staraj się pisać krótkie i zwięzłe wiadomości, gdy twój rozmówca odczyta wiadomość dostaniesz wiadomość zwrotną!";
+"STOP_MYORSE_MESSAGE" = "Twój rozmówca rozłączył się z MYOrse!";
