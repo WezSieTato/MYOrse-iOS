@@ -71,57 +71,17 @@ NSString* const kGTalkRememberKey = @"kGTalkRememberKey";
 #pragma mark - Keychain Access
 
 -(void) saveUsername:(NSString*)user withPassword:(NSString*)pass{
-//    NSString* server = self.kGTalkSerwer;
-//    // Create dictionary of search parameters
-//    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)(kSecClassInternetPassword),  kSecClass, server, kSecAttrServer, kCFBooleanTrue, kSecReturnAttributes, nil];
-//    
-//    // Remove any old values from the keychain
-//    OSStatus err = SecItemDelete((__bridge CFDictionaryRef) dict);
-//    
-//    // Create dictionary of parameters to add
-//    NSData* passwordData = [pass dataUsingEncoding:NSUTF8StringEncoding];
-//    dict = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)(kSecClassInternetPassword), kSecClass, server, kSecAttrServer, passwordData, kSecValueData, user, kSecAttrAccount, nil];
-//    
-//    // Try to save to keychain
-//    err = SecItemAdd((__bridge CFDictionaryRef) dict, NULL);
+
     [[MSKeychainManager new] saveUsername:user withPassword:pass forServer:self.kGTalkSerwer];
     
 }
 
 -(void) removeAllCredentials {
-//    NSString* server = self.kGTalkSerwer;
-//
-//    // Create dictionary of search parameters
-//    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)(kSecClassInternetPassword),  kSecClass, server, kSecAttrServer, kCFBooleanTrue, kSecReturnAttributes, kCFBooleanTrue, kSecReturnData, nil];
-//    
-//    // Remove any old values from the keychain
-////    OSStatus err =
-//    SecItemDelete((__bridge CFDictionaryRef) dict);
     [[MSKeychainManager new] removeAllCredentialsForServer:self.kGTalkSerwer];
     
 }
 
 -(void) getCredentials{
-//    NSString* server = self.kGTalkSerwer;
-//
-//    // Create dictionary of search parameters
-//    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)(kSecClassInternetPassword),  kSecClass, server, kSecAttrServer, kCFBooleanTrue, kSecReturnAttributes, kCFBooleanTrue, kSecReturnData, nil];
-//    
-//    // Look up server in the keychain
-//    NSDictionary* found = nil;
-//    CFDictionaryRef foundCF;
-////    OSStatus err =
-//    SecItemCopyMatching((__bridge CFDictionaryRef) dict, (CFTypeRef*)&foundCF);
-//    
-//    found = (__bridge NSDictionary*)(foundCF);
-//    if (!found) return;
-//    
-//    // Found
-//    NSString* user = (NSString*) [found objectForKey:(__bridge id)(kSecAttrAccount)];
-//    NSString* pass = [[NSString alloc] initWithData:[found objectForKey:(__bridge id)(kSecValueData)] encoding:NSUTF8StringEncoding];
-//    
-//    _login = user;
-//    _password = pass;
     MSPair *pair = [[MSKeychainManager new] getCredentialsForServer:self.kGTalkSerwer];
     _login = pair.first;
     _password = pair.second;

@@ -22,6 +22,7 @@
 		D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */; };
 		D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */; };
 		D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */; };
+		D3363DC51A27700200AEE0EE /* morse_table.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3363DC41A27700200AEE0EE /* morse_table.txt */; };
 		D3630C391A25F7F5009D3A1C /* MorseChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C381A25F7F5009D3A1C /* MorseChar.m */; };
 		D3630C3C1A25F8E0009D3A1C /* MorseSoundChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C3B1A25F8E0009D3A1C /* MorseSoundChar.m */; };
 		D3630C3F1A25F92E009D3A1C /* MorseDelayChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C3E1A25F92E009D3A1C /* MorseDelayChar.m */; };
@@ -76,6 +77,7 @@
 		D32B8BDE1A24BA470088AE89 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPPresence+GTalk.h"; sourceTree = "<group>"; };
 		D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPPresence+GTalk.m"; sourceTree = "<group>"; };
+		D3363DC41A27700200AEE0EE /* morse_table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = morse_table.txt; sourceTree = "<group>"; };
 		D3630C371A25F7F5009D3A1C /* MorseChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseChar.h; sourceTree = "<group>"; };
 		D3630C381A25F7F5009D3A1C /* MorseChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseChar.m; sourceTree = "<group>"; };
 		D3630C3A1A25F8E0009D3A1C /* MorseSoundChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseSoundChar.h; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		65D2355419FD6A2200CF8A81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3363DC41A27700200AEE0EE /* morse_table.txt */,
 				65D2355519FD6A2200CF8A81 /* Info.plist */,
 				65D2355619FD6A2200CF8A81 /* main.m */,
 			);
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D2356019FD6A2200CF8A81 /* Main.storyboard in Resources */,
+				D3363DC51A27700200AEE0EE /* morse_table.txt in Resources */,
 				65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */,
 				65D2356519FD6A2200CF8A81 /* LaunchScreen.xib in Resources */,
 				65D2356219FD6A2200CF8A81 /* Images.xcassets in Resources */,
