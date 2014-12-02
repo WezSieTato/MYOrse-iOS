@@ -11,8 +11,8 @@
 
 @interface MSKeychainManager : NSObject
 
--(void) saveUsername:(NSString*)user withPassword:(NSString*)pass forServer:(NSString*)server;
--(void) removeAllCredentialsForServer:(NSString*)server;
+-(void)saveUsername:(NSString*)user withPassword:(NSString*)pass forServer:(NSString*)server;
+-(void)removeAllCredentialsForServer:(NSString*)server;
 -(MSPair*)getCredentialsForServer:(NSString*)server;
 
 @end

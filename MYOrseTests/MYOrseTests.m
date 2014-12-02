@@ -11,6 +11,8 @@
 #import "GTalkLoginKeeper.h"
 #import "TableMorseReader.h"
 #import "MorseModel.h"
+#import "MorseMessagePreparator.h"
+#import "MorseTranslator.h"
 
 @interface MYOrseTests : XCTestCase{
 }
@@ -38,6 +40,61 @@
     XCTAssertTrue([cCode[5] isKindOfClass:[MorseDelayAfterMorseChar class]]);
     XCTAssertTrue([cCode[6] isKindOfClass:[MorseDot class]]);
     XCTAssertEqual(7, [cCode count]);
+}
+
+-(void)testMorseMessagePreparator{
+    NSString* message;
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"morse_table" ofType:@"txt"];
+    TableMorse* tableMorse = [[TableMorseReader new] readFile:path];
+    MorseMessagePreparator* preparator = [MorseMessagePreparator new];
+    [preparator setTableMorse:tableMorse];
+    
+    message = @"ABCD efgh IjKm";
+    message = [preparator prepareMessage:message];
+    XCTAssertEqualObjects(message, @"abcd efgh ijkm", @"Wielkie -> male litery test case");
+    
+    message = @"zazółć gęślą jaźń";
+    message = [preparator prepareMessage:message];
+    XCTAssertEqualObjects(message, @"zazolc gesla jazn", @"Wymiana polskich znakow test case");
+    
+    message = @"uwaga! kropka. przecinek, wszystko naraz !@#!@$$%^$#%^!$^%$^";
+    message = [preparator prepareMessage:message];
+    XCTAssertEqualObjects(message, @"uwaga kropka przecinek wszystko naraz ", @"Usuniecie znakow z poza tablicy");
+    
+    message = @"siem\ta teraz\nbedzie ty";
+    message = [preparator prepareMessage:message];
+    XCTAssertEqualObjects(message, @"siem a teraz bedzie ty", @"Białe znaki -> spacje test case");
+    
+}
+
+-(void)testMorseTranslation{
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"morse_table" ofType:@"txt"];
+    TableMorse* tableMorse = [[TableMorseReader new] readFile:path];
+    NSString* message = @"a, bo!";
+    MorseTranslator* translator = [MorseTranslator new];
+    [translator setTableMorse:tableMorse];
+    
+    NSArray* code = [translator translate:message];
+    
+    //a
+    XCTAssertTrue([code[0] isKindOfClass:[MorseDot class]]);
+    XCTAssertTrue([code[1] isKindOfClass:[MorseDelayAfterMorseChar class]]);
+    XCTAssertTrue([code[2] isKindOfClass:[MorseDash class]]);
+    XCTAssertTrue([code[3] isKindOfClass:[MorseDelayAfterWord class]]);
+    
+    //b
+    XCTAssertTrue([code[4] isKindOfClass:[MorseDash class]]);
+    XCTAssertTrue([code[5] isKindOfClass:[MorseDelayAfterChar class]]);
+    
+    //o
+    XCTAssertTrue([code[6] isKindOfClass:[MorseDash class]]);
+    XCTAssertTrue([code[7] isKindOfClass:[MorseDelayAfterMorseChar class]]);
+    XCTAssertTrue([code[8] isKindOfClass:[MorseDash class]]);
+    XCTAssertTrue([code[9] isKindOfClass:[MorseDelayAfterMorseChar class]]);
+    XCTAssertTrue([code[10] isKindOfClass:[MorseDash class]]);
+
+    XCTAssertEqual(11, [code count]);
+
 }
 
 - (void)tearDown {

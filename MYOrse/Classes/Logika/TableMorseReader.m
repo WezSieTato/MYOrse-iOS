@@ -30,13 +30,12 @@
 
 -(TableMorse*)readFile:(NSString *)path{
     
-    _stream = stream;
-    
     [_mutex lock];
     
     _table = [TableMorse new];
     
     NSInputStream* stream = [NSInputStream inputStreamWithFileAtPath:path];
+    _stream = stream;
     [stream setDelegate:self];
 
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
