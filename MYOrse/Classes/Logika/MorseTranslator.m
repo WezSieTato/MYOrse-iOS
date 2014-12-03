@@ -9,8 +9,7 @@
 #import "MorseTranslator.h"
 #import "MorseMessagePreparator.h"
 #import "MorseModel.h"
-#import "NSString+MSAddition.h"
-
+#import <MSAddition/MSAddition.h>
 @interface MorseTranslator (){
     MorseMessagePreparator* _preparator;
     MorseDelayAfterWord* _delayWord;
@@ -46,8 +45,8 @@
 
 //    NSArray* words = [message wordsArray];
     NSString* preparedMessade = [_preparator prepareMessage:message];
-    for (NSString* word in [preparedMessade wordsArray]) {
-        NSArray* characters = [word charsArray];
+    for (NSString* word in [preparedMessade ms_wordsArray]) {
+        NSArray* characters = [word ms_charsArray];
         NSUInteger last = [characters count] - 1;
         [characters enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
             [code addObjectsFromArray:[self.tableMorse codeForKey:obj]];

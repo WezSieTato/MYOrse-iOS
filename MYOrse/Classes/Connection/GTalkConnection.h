@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//#import <XMPPFramework/XMPPJID.h>
-
 typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 
 @interface GTalkConnection : NSObject
@@ -20,10 +18,6 @@ typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 @property (readonly, nonatomic) NSArray* buddyList;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
-/**
- * gets singleton object.
- * @return singleton
- */
 + (GTalkConnection*)sharedInstance;
 
 -(BOOL)loginWithLastLoginHandler:(GTalkConnectionLoginHandler)handler;

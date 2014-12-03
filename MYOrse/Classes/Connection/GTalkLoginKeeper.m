@@ -8,7 +8,7 @@
 
 #import "GTalkLoginKeeper.h"
 #import <Security/Security.h>
-#import "MSKeychainManager.h"
+#import <MSKeychainManager/MSKeychainManager.h>
 
 NSString* const kGTalkLoginKey = @"kGTalkLoginKey";
 NSString* const kGTalkRememberKey = @"kGTalkRememberKey";
