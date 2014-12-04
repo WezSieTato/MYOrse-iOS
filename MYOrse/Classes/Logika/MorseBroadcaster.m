@@ -61,6 +61,7 @@
     NSMethodSignature* signature = [self methodSignatureForSelector:@selector(transmitNextSignal)];
     NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setTarget:self];
+    [invocation setSelector:@selector(transmitNextSignal)];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:morse.time invocation:invocation repeats:NO];
 }

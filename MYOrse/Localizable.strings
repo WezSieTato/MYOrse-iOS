@@ -1,6 +1,7 @@
 
-
+"POPUP_ERROR_TITLE" = "Błąd połączenia!";
 "ERROR_CONNECTION_AUTH" = "Nie udało się zalogować! Sprawdź email i hasło.";
+"POPUP_CONFIRM_BUTTON_TITLE" = "Ok";
 "ERROR_INVALID_EMAIL" = "Nie prawidłowy format maila";
 "ERROR_BLANK_USERNAME" = "Pusty login";
 "ERROR_BLANK_PASSWORD" = "Puste hasło";
@@ -10,5 +11,5 @@
 "START_MYORSE_MESSAGE" = "Twój rozmowca korzysta teraz z programu MYOrse, będzie odbieral twoje wiadomości w alfabecie Morse'a, dlatego staraj się pisać krótkie i zwięzłe wiadomości, gdy twój rozmówca odczyta wiadomość dostaniesz wiadomość zwrotną!";
 "STOP_MYORSE_MESSAGE" = "Twój rozmówca rozłączył się z MYOrse!";
 
-"TRANSMITTION_MORSE_STARTED" = "Twój rozmówca właśnie odsłuchuje twoją wiadomość, wstrzymaj się z wysłaniem kolejnej, póki nie otrzymasz wiadomości zwrotnej!"
-"TRANSMITTION_MORSE_ENDED" = "Twój rozmówca właśnie odsłuchał twoją wiadomość, możesz nadać kolejną!"
+"TRANSMITTION_MORSE_STARTED" = "Twój rozmówca właśnie odsłuchuje twoją wiadomość, wstrzymaj się z wysłaniem kolejnej, póki nie otrzymasz wiadomości zwrotnej!";
+"TRANSMITTION_MORSE_ENDED" = "Twój rozmówca właśnie odsłuchał twoją wiadomość, możesz nadać kolejną!";

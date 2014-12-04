@@ -68,11 +68,16 @@
 -(void)transmittMessage:(NSString*)message{
     [[GTalkConnection sharedInstance] sendMessageTo:_username
                                            withBody:NSLocalizedString(@"TRANSMITTION_MORSE_STARTED", nil)];
+    [_broadcaster sendMessage:message];
 }
 
 -(void)morseBroadcasterDidEndTransmition:(MorseBroadcaster *)morseTransmitter{
     [[GTalkConnection sharedInstance] sendMessageTo:_username
                                            withBody:NSLocalizedString(@"TRANSMITTION_MORSE_ENDED", nil)];
+}
+
+-(void)dealloc{
+    [self stop];
 }
 
 @end

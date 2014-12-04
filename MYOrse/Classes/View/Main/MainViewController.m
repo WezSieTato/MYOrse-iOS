@@ -8,10 +8,12 @@
 
 #import "MainViewController.h"
 #import "GTalkConnection.h"
+#import "MYOrseListener.h"
 
 @interface MainViewController (){
     BOOL _started;
     NSString* _pickedFriend;
+    MYOrseListener* _myorseListener;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblUser;
@@ -29,6 +31,7 @@
     GTalkConnection* gtalk = [GTalkConnection sharedInstance];
     _lblUser.text = gtalk.username;
     _btnStart.enabled = NO;
+    _myorseListener = [MYOrseListener new];
     
 }
 
@@ -53,8 +56,14 @@
     NSString* siemaMsg = NSLocalizedString( !_started ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
     _btnPick.enabled = !_started;
     
+    if(_started){
+        [_myorseListener start];
+    } else {
+        [_myorseListener stop];
+    }
+    
     [[GTalkConnection sharedInstance] sendMessageTo:_pickedFriend withBody:siemaMsg];
-
+    
 }
 
 -(IBAction)logout:(id)sender{
@@ -67,7 +76,9 @@
 -(void)buddyPickedWithEmail:(NSString *)email{
     _lblOtherUser.text = email ? : @"";
     _pickedFriend = email ? : @"";
+    _myorseListener.username = email;
     _btnStart.enabled = email != nil;
+    
     [self.navigationController setToolbarHidden:email == nil animated:YES];
 }
 
