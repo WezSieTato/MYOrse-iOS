@@ -12,7 +12,7 @@
 
 #import "XMPPJID+GTalk.h"
 #import "Constants.h"
-#import "MSPair.h"
+#import <MSLittleMagic/MSPair.h>
 #import "XMPPPresence+GTalk.h"
 
 #define GCHAT_DOMAIN @"talk.google.com"

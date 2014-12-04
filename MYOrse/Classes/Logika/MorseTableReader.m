@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 siema. All rights reserved.
 //
 
-#import "TableMorseReader.h"
+#import "MorseTableReader.h"
 
-@interface TableMorseReader () <NSStreamDelegate> {
+@interface MorseTableReader () <NSStreamDelegate> {
     NSLock* _mutex;
     NSInputStream* _stream;
-    TableMorse* _table;
+    MorseTable* _table;
 }
 
 @end
 
-@implementation TableMorseReader
+@implementation MorseTableReader
 
 -(instancetype)init{
     self = [super init];
@@ -28,11 +28,11 @@
     return self;
 }
 
--(TableMorse*)readFile:(NSString *)path{
+-(MorseTable*)readFile:(NSString *)path{
     
     [_mutex lock];
     
-    _table = [TableMorse new];
+    _table = [MorseTable new];
     
     NSInputStream* stream = [NSInputStream inputStreamWithFileAtPath:path];
     _stream = stream;

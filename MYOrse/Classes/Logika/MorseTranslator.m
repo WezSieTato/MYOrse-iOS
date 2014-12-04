@@ -20,6 +20,8 @@
 
 @implementation MorseTranslator
 
+#pragma mark - Creation
+
 -(instancetype)init{
     self = [super init];
     
@@ -32,13 +34,33 @@
     return self;
 }
 
--(void)setTableMorse:(TableMorse *)tableMorse{
+-(instancetype)initWithTable:(MorseTable *)table{
+    self = [super init];
+    
+    if(self){
+        _preparator = [MorseMessagePreparator messagePreparatorWithTable:table];
+        _delayChar = [MorseDelayAfterChar new];
+        _delayWord = [MorseDelayAfterWord new];
+    }
+    
+    return self;
+}
+
++(instancetype)translatorWithTable:(MorseTable *)table{
+    return [[self alloc] initWithTable:table];
+}
+
+#pragma mark - Properties
+
+-(void)setTableMorse:(MorseTable *)tableMorse{
     _preparator.tableMorse = tableMorse;
 }
 
--(TableMorse*)tableMorse{
+-(MorseTable*)tableMorse{
     return _preparator.tableMorse;
 }
+
+#pragma mark - Translation
 
 -(NSArray*)translate:(NSString *)message{
     NSMutableArray* code = [NSMutableArray new];

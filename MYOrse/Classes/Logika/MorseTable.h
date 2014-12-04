@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TableMorse : NSObject
+@interface MorseTable : NSObject
 
 @property (nonatomic, readonly) NSUInteger count;
 @property (nonatomic, readonly) NSString* keys;

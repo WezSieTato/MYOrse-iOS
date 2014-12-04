@@ -10,8 +10,8 @@
 		12E5A89AEB801B6D74B5CB2C /* libPods-MYOrse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */; };
 		654A21851A20BB2900E475D0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654A21841A20BB2900E475D0 /* MainViewController.m */; };
 		6589E1F61A0972A200687054 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6589E1F11A0972A200687054 /* AppDelegate.m */; };
-		65BD1BE61A2B841A008C96BE /* TableMorse.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD1BE51A2B841A008C96BE /* TableMorse.m */; };
-		65BD1BF01A2BAE93008C96BE /* TableMorseReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD1BEF1A2BAE93008C96BE /* TableMorseReader.m */; };
+		65BD1BE61A2B841A008C96BE /* MorseTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD1BE51A2B841A008C96BE /* MorseTable.m */; };
+		65BD1BF01A2BAE93008C96BE /* MorseTableReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD1BEF1A2BAE93008C96BE /* MorseTableReader.m */; };
 		65D2355719FD6A2200CF8A81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D2355619FD6A2200CF8A81 /* main.m */; };
 		65D2356019FD6A2200CF8A81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D2355E19FD6A2200CF8A81 /* Main.storyboard */; };
 		65D2356219FD6A2200CF8A81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D2356119FD6A2200CF8A81 /* Images.xcassets */; };
@@ -21,6 +21,7 @@
 		65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2041A1D447200046EBC /* GTalkConnection.m */; };
 		65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2091A1D5CE500046EBC /* Constants.m */; };
 		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
+		D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */; };
 		D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */; };
 		D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */; };
 		D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */; };
@@ -35,6 +36,7 @@
 		D3630C481A25FAB7009D3A1C /* MorseDelayAfterChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C471A25FAB7009D3A1C /* MorseDelayAfterChar.m */; };
 		D3630C4B1A25FAE3009D3A1C /* MorseDelayAfterWord.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C4A1A25FAE3009D3A1C /* MorseDelayAfterWord.m */; };
 		D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C4D1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m */; };
+		D36D15671A307208009F7125 /* MYOrseListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D36D15661A307208009F7125 /* MYOrseListener.m */; };
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +56,11 @@
 		654A21841A20BB2900E475D0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6589E1F01A0972A200687054 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6589E1F11A0972A200687054 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65BD1BE41A2B841A008C96BE /* TableMorse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableMorse.h; sourceTree = "<group>"; };
-		65BD1BE51A2B841A008C96BE /* TableMorse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableMorse.m; sourceTree = "<group>"; };
+		65BD1BE41A2B841A008C96BE /* MorseTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseTable.h; sourceTree = "<group>"; };
+		65BD1BE51A2B841A008C96BE /* MorseTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseTable.m; sourceTree = "<group>"; };
 		65BD1BE71A2B867F008C96BE /* MorseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorseModel.h; sourceTree = "<group>"; };
-		65BD1BEE1A2BAE93008C96BE /* TableMorseReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableMorseReader.h; sourceTree = "<group>"; };
-		65BD1BEF1A2BAE93008C96BE /* TableMorseReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableMorseReader.m; sourceTree = "<group>"; };
+		65BD1BEE1A2BAE93008C96BE /* MorseTableReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseTableReader.h; sourceTree = "<group>"; };
+		65BD1BEF1A2BAE93008C96BE /* MorseTableReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseTableReader.m; sourceTree = "<group>"; };
 		65D2355119FD6A2200CF8A81 /* MYOrse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYOrse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D2355519FD6A2200CF8A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D2355619FD6A2200CF8A81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		65E1B2091A1D5CE500046EBC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		65E1B20B1A1D5E3100046EBC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		69F6BCAD51640ABEDF67D445 /* Pods-MYOrse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYOrse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYOrse/Pods-MYOrse.debug.xcconfig"; sourceTree = "<group>"; };
+		D319F0551A2F7BA100E96D11 /* MorseBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseBroadcaster.h; sourceTree = "<group>"; };
+		D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseBroadcaster.m; sourceTree = "<group>"; };
 		D32B8BD71A24ACB60088AE89 /* BuddiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddiesTableViewController.h; sourceTree = "<group>"; };
 		D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddiesTableViewController.m; sourceTree = "<group>"; };
 		D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPJID+GTalk.h"; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		D3630C4A1A25FAE3009D3A1C /* MorseDelayAfterWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseDelayAfterWord.m; sourceTree = "<group>"; };
 		D3630C4C1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseDelayAfterMorseChar.h; sourceTree = "<group>"; };
 		D3630C4D1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseDelayAfterMorseChar.m; sourceTree = "<group>"; };
+		D36D15651A307208009F7125 /* MYOrseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOrseListener.h; sourceTree = "<group>"; };
+		D36D15661A307208009F7125 /* MYOrseListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOrseListener.m; sourceTree = "<group>"; };
 		D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkLoginKeeper.h; sourceTree = "<group>"; };
 		D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkLoginKeeper.m; sourceTree = "<group>"; };
 		D390FED01A2319A6005B1D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,8 @@
 			children = (
 				654A21831A20BB2900E475D0 /* MainViewController.h */,
 				654A21841A20BB2900E475D0 /* MainViewController.m */,
+				D36D15651A307208009F7125 /* MYOrseListener.h */,
+				D36D15661A307208009F7125 /* MYOrseListener.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -288,14 +296,16 @@
 			isa = PBXGroup;
 			children = (
 				D3630C361A25F7B8009D3A1C /* Model */,
-				65BD1BE41A2B841A008C96BE /* TableMorse.h */,
-				65BD1BE51A2B841A008C96BE /* TableMorse.m */,
-				65BD1BEE1A2BAE93008C96BE /* TableMorseReader.h */,
-				65BD1BEF1A2BAE93008C96BE /* TableMorseReader.m */,
+				65BD1BE41A2B841A008C96BE /* MorseTable.h */,
+				65BD1BE51A2B841A008C96BE /* MorseTable.m */,
+				65BD1BEE1A2BAE93008C96BE /* MorseTableReader.h */,
+				65BD1BEF1A2BAE93008C96BE /* MorseTableReader.m */,
 				D3421CD81A2DF91B00E13E29 /* MorseTranslator.h */,
 				D3421CD91A2DF91B00E13E29 /* MorseTranslator.m */,
 				D3421CDB1A2DFA1200E13E29 /* MorseMessagePreparator.h */,
 				D3421CDC1A2DFA1200E13E29 /* MorseMessagePreparator.m */,
+				D319F0551A2F7BA100E96D11 /* MorseBroadcaster.h */,
+				D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */,
 			);
 			path = Logika;
 			sourceTree = "<group>";
@@ -463,7 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3421CDA1A2DF91B00E13E29 /* MorseTranslator.m in Sources */,
-				65BD1BF01A2BAE93008C96BE /* TableMorseReader.m in Sources */,
+				65BD1BF01A2BAE93008C96BE /* MorseTableReader.m in Sources */,
+				D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */,
 				D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */,
 				65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */,
 				D3421CDD1A2DFA1200E13E29 /* MorseMessagePreparator.m in Sources */,
@@ -477,11 +488,12 @@
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
 				65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */,
 				D3630C4B1A25FAE3009D3A1C /* MorseDelayAfterWord.m in Sources */,
+				D36D15671A307208009F7125 /* MYOrseListener.m in Sources */,
 				D3630C3C1A25F8E0009D3A1C /* MorseSoundChar.m in Sources */,
 				D3630C3F1A25F92E009D3A1C /* MorseDelayChar.m in Sources */,
 				D3630C391A25F7F5009D3A1C /* MorseChar.m in Sources */,
 				D3630C451A25FA37009D3A1C /* MorseDash.m in Sources */,
-				65BD1BE61A2B841A008C96BE /* TableMorse.m in Sources */,
+				65BD1BE61A2B841A008C96BE /* MorseTable.m in Sources */,
 				65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */,
 				D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */,
 			);

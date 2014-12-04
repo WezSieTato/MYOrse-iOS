@@ -10,7 +10,7 @@
 
 @implementation MorseChar
 
--(instancetype)initWithTime:(float)time emmitSound:(BOOL)emmitSound{
+-(instancetype)initWithTime:(NSTimeInterval)time emmitSound:(BOOL)emmitSound{
     self = [super init];
     if(self){
         _time = time;

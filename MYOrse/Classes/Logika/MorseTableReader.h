@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TableMorse.h"
+#import "MorseTable.h"
 
-@interface TableMorseReader : NSObject
+@interface MorseTableReader : NSObject
 
--(TableMorse*)readFile:(NSString*)path;
+-(MorseTable*)readFile:(NSString*)path;
 
 @end

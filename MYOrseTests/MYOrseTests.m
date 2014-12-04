@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "GTalkLoginKeeper.h"
-#import "TableMorseReader.h"
+#import "MorseTableReader.h"
 #import "MorseModel.h"
 #import "MorseMessagePreparator.h"
 #import "MorseTranslator.h"
@@ -28,7 +28,7 @@
 
 -(void)testTableMorse{
     NSString* path = [[NSBundle mainBundle] pathForResource:@"morse_table" ofType:@"txt"];
-    TableMorse* tableMorse = [[TableMorseReader new] readFile:path];
+    MorseTable* tableMorse = [[MorseTableReader new] readFile:path];
     XCTAssertEqual(36, [tableMorse count]);
     XCTAssertEqualObjects(@"b3zc4d5e6f7g8h9ijklmnopqrstuvw01xa2y", [tableMorse keys]);
     NSArray* cCode = [tableMorse codeForKey:@"c"];
@@ -45,7 +45,7 @@
 -(void)testMorseMessagePreparator{
     NSString* message;
     NSString* path = [[NSBundle mainBundle] pathForResource:@"morse_table" ofType:@"txt"];
-    TableMorse* tableMorse = [[TableMorseReader new] readFile:path];
+    MorseTable* tableMorse = [[MorseTableReader new] readFile:path];
     MorseMessagePreparator* preparator = [MorseMessagePreparator new];
     [preparator setTableMorse:tableMorse];
     
@@ -69,7 +69,7 @@
 
 -(void)testMorseTranslation{
     NSString* path = [[NSBundle mainBundle] pathForResource:@"morse_table" ofType:@"txt"];
-    TableMorse* tableMorse = [[TableMorseReader new] readFile:path];
+    MorseTable* tableMorse = [[MorseTableReader new] readFile:path];
     NSString* message = @"a, bo!";
     MorseTranslator* translator = [MorseTranslator new];
     [translator setTableMorse:tableMorse];

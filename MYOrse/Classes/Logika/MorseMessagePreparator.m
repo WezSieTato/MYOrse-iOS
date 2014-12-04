@@ -11,6 +11,23 @@
 
 @implementation MorseMessagePreparator
 
+#pragma mark - Creation
+
+- (instancetype)initWithTable:(MorseTable *)table
+{
+    self = [super init];
+    if (self) {
+        self.tableMorse = table;
+    }
+    return self;
+}
+
++(instancetype)messagePreparatorWithTable:(MorseTable *)table{
+    return [[self alloc] initWithTable:table];
+}
+
+#pragma mark - Preparation
+
 -(NSString*)prepareMessage:(NSString *)message{
     NSMutableString* mutableMessage = [[message lowercaseString] mutableCopy];
     

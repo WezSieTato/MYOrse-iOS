@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#define kMorseCharDotTime 1000.0f
+#define kMorseCharDotTime 1.0f
 
 @interface MorseChar : NSObject
 
 @property (readonly) BOOL emmitSound;
-@property (readonly) float time;
+@property (readonly) NSTimeInterval time;
 
--(instancetype)initWithTime:(float)time emmitSound:(BOOL)emmitSound;
+-(instancetype)initWithTime:(NSTimeInterval)time emmitSound:(BOOL)emmitSound;
 
 @end

@@ -9,3 +9,6 @@
 "STOP_MYORSE_SERVICE" = "Zatrzymaj odbiornik";
 "START_MYORSE_MESSAGE" = "Twój rozmowca korzysta teraz z programu MYOrse, będzie odbieral twoje wiadomości w alfabecie Morse'a, dlatego staraj się pisać krótkie i zwięzłe wiadomości, gdy twój rozmówca odczyta wiadomość dostaniesz wiadomość zwrotną!";
 "STOP_MYORSE_MESSAGE" = "Twój rozmówca rozłączył się z MYOrse!";
+
+"TRANSMITTION_MORSE_STARTED" = "Twój rozmówca właśnie odsłuchuje twoją wiadomość, wstrzymaj się z wysłaniem kolejnej, póki nie otrzymasz wiadomości zwrotnej!"
+"TRANSMITTION_MORSE_ENDED" = "Twój rozmówca właśnie odsłuchał twoją wiadomość, możesz nadać kolejną!"

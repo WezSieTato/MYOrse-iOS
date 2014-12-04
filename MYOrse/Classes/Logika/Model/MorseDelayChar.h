@@ -10,6 +10,6 @@
 
 @interface MorseDelayChar : MorseChar
 
--(instancetype)initWithTime:(float)time;
+-(instancetype)initWithTime:(NSTimeInterval)time;
 
 @end

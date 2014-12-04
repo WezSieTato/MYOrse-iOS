@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 siema. All rights reserved.
 //
 
-#import "TableMorse.h"
+#import "MorseTable.h"
 #import "MorseModel.h"
 
-@interface TableMorse (){
+@interface MorseTable (){
     NSMutableDictionary* _map;
     MorseDot* _morseDot;
     MorseDash* _morseDash;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TableMorse
+@implementation MorseTable
 
 -(instancetype)init{
     self = [super init];

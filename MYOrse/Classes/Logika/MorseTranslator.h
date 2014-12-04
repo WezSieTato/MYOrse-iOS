@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TableMorse.h"
+#import "MorseTable.h"
 
 /**
  *  Klasa tłumacząca ciąg znaków na ciąg znaków Morse'a
  */
 @interface MorseTranslator : NSObject
 
-@property (nonatomic, strong) TableMorse*  tableMorse;
+@property (nonatomic, strong) MorseTable*  tableMorse;
+
+-(instancetype)initWithTable:(MorseTable*)table;
++(instancetype)translatorWithTable:(MorseTable*)table;
 
 -(NSArray*)translate:(NSString*)message;
 
