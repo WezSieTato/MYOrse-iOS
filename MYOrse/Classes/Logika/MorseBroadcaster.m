@@ -25,6 +25,7 @@
     self = [super init];
     if(self){
         self.translator = translator;
+        _transmitting = NO;
     }
     
     return self;
@@ -40,6 +41,7 @@
     _message = message;
     _code = [_translator translate:message];
     _enumerator = [_code objectEnumerator];
+    _transmitting = YES;
     [self transmitNextSignal];
 }
 
@@ -68,6 +70,7 @@
 
 -(void)transmitionEnded{
     NSLog(@"Transmisja zakonczona!");
+    _transmitting = NO;
     [self.delegate morseBroadcasterDidEndTransmition:self];
 }
 
