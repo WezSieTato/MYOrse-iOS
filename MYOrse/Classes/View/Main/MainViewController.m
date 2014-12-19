@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "GTalkConnection.h"
 #import "MYOrseListener.h"
+#import <MyoKit/MyoKit.h>
 
 @interface MainViewController (){
     BOOL _started;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblOtherUser;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnStart;
 @property (weak, nonatomic) IBOutlet UIButton *btnPick;
+@property (weak, nonatomic) IBOutlet UIButton *btnMYO;
 
 @end
 
@@ -55,6 +57,7 @@
     sender.title = NSLocalizedString( _started ? @"STOP_MYORSE_SERVICE" : @"START_MYORSE_SERVICE", nil);
     NSString* siemaMsg = NSLocalizedString( !_started ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
     _btnPick.enabled = !_started;
+    _btnMYO.enabled = !_started;
     
     if(_started){
         [_myorseListener start];
@@ -71,6 +74,12 @@
     
     UIViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
     [self presentViewController:next animated:YES completion:nil];
+}
+
+- (IBAction)MYOsettings:(id)sender {
+    TLMSettingsViewController *settings = [[TLMSettingsViewController alloc] init];
+    
+    [self.navigationController pushViewController:settings animated:YES];
 }
 
 -(void)buddyPickedWithEmail:(NSString *)email{

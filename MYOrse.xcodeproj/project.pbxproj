@@ -38,6 +38,8 @@
 		D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C4D1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m */; };
 		D36D15671A307208009F7125 /* MYOrseListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D36D15661A307208009F7125 /* MYOrseListener.m */; };
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
+		D3A147F81A445B53006082FC /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A147F71A445B53006082FC /* MyoKit.framework */; };
+		D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A147FA1A446B67006082FC /* MYOTransmitter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,9 @@
 		D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkLoginKeeper.h; sourceTree = "<group>"; };
 		D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkLoginKeeper.m; sourceTree = "<group>"; };
 		D390FED01A2319A6005B1D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3A147F71A445B53006082FC /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		D3A147F91A446B67006082FC /* MYOTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOTransmitter.h; sourceTree = "<group>"; };
+		D3A147FA1A446B67006082FC /* MYOTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOTransmitter.m; sourceTree = "<group>"; };
 		D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MYOrse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A147F81A445B53006082FC /* MyoKit.framework in Frameworks */,
 				12E5A89AEB801B6D74B5CB2C /* libPods-MYOrse.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +149,8 @@
 				654A21841A20BB2900E475D0 /* MainViewController.m */,
 				D36D15651A307208009F7125 /* MYOrseListener.h */,
 				D36D15661A307208009F7125 /* MYOrseListener.m */,
+				D3A147F91A446B67006082FC /* MYOTransmitter.h */,
+				D3A147FA1A446B67006082FC /* MYOTransmitter.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 		C2FF4B7357622E80A24964AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3A147F71A445B53006082FC /* MyoKit.framework */,
 				D390FED01A2319A6005B1D13 /* Security.framework */,
 				D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */,
 			);
@@ -483,6 +492,7 @@
 				D3630C481A25FAB7009D3A1C /* MorseDelayAfterChar.m in Sources */,
 				D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */,
 				D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */,
+				D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */,
 				6589E1F61A0972A200687054 /* AppDelegate.m in Sources */,
 				D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */,
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
@@ -623,6 +633,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MYOrse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,6 +652,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MYOrse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

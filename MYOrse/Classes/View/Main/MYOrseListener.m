@@ -12,6 +12,7 @@
 #import "MorseBroadcaster.h"
 #import "MorseTableReader.h"
 #import "GTalkConnection.h"
+#import "MYOTransmitter.h"
 
 @interface MYOrseListener () < MorseBroadcasterDelegate >{
     MorseBroadcaster* _broadcaster;
@@ -32,6 +33,7 @@
         MorseTranslator* translator = [MorseTranslator translatorWithTable:tableMorse];
         _broadcaster = [MorseBroadcaster broadcasterWithTranslator:translator];
         _broadcaster.delegate = self;
+        _broadcaster.transmitter = [MYOTransmitter new];
     }
     return self;
 }

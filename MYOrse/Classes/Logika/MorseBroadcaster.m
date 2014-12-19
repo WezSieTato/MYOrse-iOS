@@ -7,7 +7,7 @@
 //
 
 #import "MorseBroadcaster.h"
-#import "MorseChar.h"
+#import "MorseModel.h"
 
 @interface MorseBroadcaster (){
     NSArray* _code;
@@ -55,7 +55,14 @@
     
     if(morse.emmitSound){
         NSLog(@"bzz przez %f", morse.time);
-        [self.transmitter transmit:morse.time];
+        if([self.transmitter respondsToSelector:@selector(transmit:)])
+            [self.transmitter transmit:morse.time];
+        else {
+            if([morse isKindOfClass:[MorseDot class]])
+               [self.transmitter transmitShort];
+            else
+                [self.transmitter transmitLong];
+        }
     } else{
         NSLog(@"przerwa przez %f", morse.time);
     }

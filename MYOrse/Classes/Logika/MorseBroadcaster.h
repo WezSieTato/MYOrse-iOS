@@ -19,7 +19,10 @@
 
 @protocol MorseTransmitter <NSObject>
 
+@optional
 -(void)transmit:(NSTimeInterval)time;
+-(void)transmitShort;
+-(void)transmitLong;
 
 @end
 
