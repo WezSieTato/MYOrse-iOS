@@ -13,9 +13,14 @@
 #import "MorseTableReader.h"
 #import "GTalkConnection.h"
 #import "MYOTransmitter.h"
+#import "MYOReceiver.h"
+#import <MyoKit/MyoKit.h>
 
-@interface MYOrseListener () < MorseBroadcasterDelegate >{
+@interface MYOrseListener () < MorseBroadcasterDelegate, MYOReceiverDelegate >{
     MorseBroadcaster* _broadcaster;
+    MYOReceiver* _myoReceiver;
+    NSTimer* _bzzTimer;
+    short _bzzNumber;
 }
 
 @end
@@ -34,6 +39,9 @@
         _broadcaster = [MorseBroadcaster broadcasterWithTranslator:translator];
         _broadcaster.delegate = self;
         _broadcaster.transmitter = [MYOTransmitter new];
+        _myoReceiver = [MYOReceiver receiverWithMorseTable:tableMorse];
+        _myoReceiver.delegate = self;
+        _transmitting = NO;
     }
     return self;
 }
@@ -49,13 +57,13 @@
 
 -(void)stop{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if(_transmitting){
+        [_broadcaster stopTransmission];
+        [_myoReceiver stop];
+    }
 }
 
--(BOOL)isIsTransmitting{
-    return _broadcaster.isTransmitting;
-}
-
-#pragma mark - Private Methods
+#pragma mark - Delegate Methods
 
 -(void)messageReceived:(NSNotification*)notification{
     MSPair* pair = (MSPair*)notification.object;
@@ -67,19 +75,47 @@
     }
 }
 
+-(void)morseBroadcasterDidEndTransmission:(MorseBroadcaster *)morseTransmitter{
+    [self bzz];
+}
+
+-(void)morseBroadcasterDidInterruptTransmission:(MorseBroadcaster *)morseTransmitter{
+    [[GTalkConnection sharedInstance] sendMessageTo:_username
+                                           withBody:NSLocalizedString(@"INTERRUPT_MYORSE_MESSAGE", nil)];
+    _transmitting = NO;
+}
+
+-(void)messageSended:(NSString *)message{
+    if (!message || ![message length]) {
+        [[GTalkConnection sharedInstance] sendMessageTo:_username
+                                               withBody:NSLocalizedString(@"TRANSMITTION_MORSE_ENDED", nil)];
+    }
+    _transmitting = NO;
+}
+
+#pragma mark - Private Methods
+
 -(void)transmittMessage:(NSString*)message{
     [[GTalkConnection sharedInstance] sendMessageTo:_username
                                            withBody:NSLocalizedString(@"TRANSMITTION_MORSE_STARTED", nil)];
     [_broadcaster sendMessage:message];
+    _transmitting = YES;
 }
 
--(void)morseBroadcasterDidEndTransmition:(MorseBroadcaster *)morseTransmitter{
-    [[GTalkConnection sharedInstance] sendMessageTo:_username
-                                           withBody:NSLocalizedString(@"TRANSMITTION_MORSE_ENDED", nil)];
-}
 
 -(void)dealloc{
     [self stop];
+}
+
+-(void)bzz{
+    [[TLMHub sharedHub].myoDevices.firstObject indicateUserAction];
+    ++_bzzNumber;
+    if(_bzzNumber < 3)
+        _bzzTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(bzz) userInfo:nil repeats:NO];
+    else{
+        _bzzNumber = 0;
+        [_myoReceiver startWithEmail:_username];
+    }
 }
 
 @end

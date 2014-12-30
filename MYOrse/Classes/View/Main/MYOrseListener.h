@@ -11,7 +11,7 @@
 @interface MYOrseListener : NSObject
 
 @property (nonatomic, strong) NSString* username;
-@property (readonly) BOOL* isTransmitting;
+@property (readonly, getter=isTransmitting) BOOL transmitting;
 
 -(void)start;
 -(void)stop;

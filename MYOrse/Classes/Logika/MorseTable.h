@@ -23,5 +23,6 @@
 -(void)addCode:(NSArray*)dotArray forKey:(NSString*)key;
 
 -(NSArray*)codeForKey:(NSString*)key;
+-(NSString*)keyForCode:(NSArray*)code;
 
 @end

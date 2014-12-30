@@ -13,7 +13,6 @@
     NSMutableDictionary* _map;
     MorseDot* _morseDot;
     MorseDash* _morseDash;
-    MorseDelayAfterMorseChar* _morseDelay;
 }
 
 @end
@@ -26,7 +25,6 @@
         _map = [NSMutableDictionary new];
         _morseDot = [MorseDot new];
         _morseDash = [MorseDash new];
-        _morseDelay = [MorseDelayAfterMorseChar new];
     
     }
     
@@ -47,18 +45,25 @@
 
 -(void)addCode:(NSArray *)dotArray forKey:(NSString *)key{
     NSMutableArray* charsArray = [NSMutableArray new];
-    NSUInteger last = [dotArray count] - 1;
+
     [dotArray enumerateObjectsUsingBlock:^(NSNumber* obj, NSUInteger idx, BOOL *stop) {
         MorseSoundChar* sChar = [obj boolValue] ? _morseDot : _morseDash;
         [charsArray addObject:sChar];
-        if (idx < last) {
-            [charsArray addObject:_morseDelay];
-        }
         
     }];
     
     [_map setValue:[charsArray copy] forKey:key];
 }
+
+-(NSString*)keyForCode:(NSArray*)code
+{
+    for (NSString* key in _map) {
+        if([_map[key] isEqualToArray:code])
+            return key;
+    }
+    return nil;
+}
+
 
 -(NSArray*)codeForKey:(NSString *)key{
     return _map[key];

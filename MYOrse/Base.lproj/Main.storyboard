@@ -277,6 +277,18 @@
                                             <action selector="MYOsettings:" destination="5ck-aV-i11" eventType="touchUpInside" id="Squ-Z8-YbY"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zsynchronizowano:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpJ-IT-cXl">
+                                        <rect key="frame" x="0.0" y="218" width="149" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOa-zE-cLy">
+                                        <rect key="frame" x="540" y="218" width="10" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -289,15 +301,18 @@
                                     <constraint firstItem="iyX-eN-DNq" firstAttribute="top" secondItem="WuP-sp-jbi" secondAttribute="bottom" constant="5" id="B6k-36-nKa"/>
                                     <constraint firstItem="yL8-Mj-hwK" firstAttribute="leading" secondItem="Xqo-YJ-uCc" secondAttribute="leading" id="DE1-bd-78C"/>
                                     <constraint firstAttribute="trailing" secondItem="smS-oT-3ed" secondAttribute="trailing" id="Ebt-4s-oio"/>
+                                    <constraint firstItem="DpJ-IT-cXl" firstAttribute="top" secondItem="yIh-jt-8wJ" secondAttribute="bottom" constant="8" id="GjX-d9-nQ9"/>
                                     <constraint firstItem="d5A-My-kl0" firstAttribute="trailing" secondItem="smS-oT-3ed" secondAttribute="trailing" id="Lit-ks-HxU"/>
                                     <constraint firstAttribute="trailing" secondItem="WuP-sp-jbi" secondAttribute="trailing" id="NaV-Si-f6c"/>
                                     <constraint firstItem="d5A-My-kl0" firstAttribute="leading" secondItem="wdc-7U-jTh" secondAttribute="leading" id="Op0-7Z-Ewt"/>
                                     <constraint firstItem="smS-oT-3ed" firstAttribute="top" secondItem="iyX-eN-DNq" secondAttribute="bottom" id="QSx-0m-EOj"/>
+                                    <constraint firstItem="DpJ-IT-cXl" firstAttribute="leading" secondItem="Xqo-YJ-uCc" secondAttribute="leading" id="aqk-Ht-iiU"/>
                                     <constraint firstItem="d5A-My-kl0" firstAttribute="top" secondItem="SAf-9b-pbF" secondAttribute="bottom" constant="8" symbolic="YES" id="bTT-Uf-AJp"/>
                                     <constraint firstItem="nbN-aD-VPl" firstAttribute="top" secondItem="QfC-5k-Lr4" secondAttribute="bottom" constant="10" id="cbK-aX-CuS"/>
                                     <constraint firstItem="yL8-Mj-hwK" firstAttribute="top" secondItem="Xqo-YJ-uCc" secondAttribute="top" id="d2s-8S-JBr"/>
                                     <constraint firstItem="yL8-Mj-hwK" firstAttribute="width" secondItem="nbN-aD-VPl" secondAttribute="width" id="ihv-HL-bUs"/>
                                     <constraint firstItem="nbN-aD-VPl" firstAttribute="leading" secondItem="Xqo-YJ-uCc" secondAttribute="leading" id="koZ-wg-lf9"/>
+                                    <constraint firstItem="DpJ-IT-cXl" firstAttribute="centerY" secondItem="TOa-zE-cLy" secondAttribute="centerY" id="mYd-Rw-daa"/>
                                     <constraint firstItem="nbN-aD-VPl" firstAttribute="bottom" secondItem="WuP-sp-jbi" secondAttribute="top" constant="5" id="nGa-TP-glu"/>
                                     <constraint firstAttribute="trailing" secondItem="QfC-5k-Lr4" secondAttribute="trailing" id="nrs-i9-3Ne"/>
                                     <constraint firstAttribute="trailing" secondItem="SAf-9b-pbF" secondAttribute="trailing" constant="5" id="qYj-qL-PyW"/>
@@ -306,6 +321,7 @@
                                     <constraint firstItem="go1-B0-Wbg" firstAttribute="top" secondItem="yL8-Mj-hwK" secondAttribute="bottom" constant="5" id="t0u-PY-HMn"/>
                                     <constraint firstItem="yIh-jt-8wJ" firstAttribute="top" secondItem="d5A-My-kl0" secondAttribute="bottom" constant="8" id="u85-is-IYe"/>
                                     <constraint firstAttribute="width" secondItem="nbN-aD-VPl" secondAttribute="width" multiplier="2" id="uQL-hd-FzZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="TOa-zE-cLy" secondAttribute="trailing" constant="10" id="wRI-dr-i0V"/>
                                     <constraint firstAttribute="trailing" secondItem="go1-B0-Wbg" secondAttribute="trailing" id="wlW-aY-9h3"/>
                                     <constraint firstAttribute="trailing" secondItem="nlt-3M-cXO" secondAttribute="trailing" id="xsO-NU-aZa"/>
                                     <constraint firstItem="wdc-7U-jTh" firstAttribute="leading" secondItem="Xqo-YJ-uCc" secondAttribute="leading" id="zYe-Yf-LLU"/>
@@ -347,6 +363,7 @@
                         <outlet property="btnPick" destination="iyX-eN-DNq" id="UZT-Y1-Qyg"/>
                         <outlet property="btnStart" destination="I63-L3-zw7" id="OcQ-Hy-Wdk"/>
                         <outlet property="lblOtherUser" destination="WuP-sp-jbi" id="G4A-xD-prE"/>
+                        <outlet property="lblSynchronizedNumber" destination="TOa-zE-cLy" id="nzA-aW-ixN"/>
                         <outlet property="lblUser" destination="go1-B0-Wbg" id="rNB-vK-hZH"/>
                     </connections>
                 </viewController>

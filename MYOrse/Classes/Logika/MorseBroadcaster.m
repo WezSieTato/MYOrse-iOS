@@ -75,10 +75,18 @@
     _timer = [NSTimer scheduledTimerWithTimeInterval:morse.time invocation:invocation repeats:NO];
 }
 
+-(void)stopTransmission
+{
+    [_timer invalidate];
+    _transmitting = NO;
+    [self.delegate morseBroadcasterDidInterruptTransmission:self];
+}
+
+
 -(void)transmitionEnded{
     NSLog(@"Transmisja zakonczona!");
     _transmitting = NO;
-    [self.delegate morseBroadcasterDidEndTransmition:self];
+    [self.delegate morseBroadcasterDidEndTransmission:self];
 }
 
 @end

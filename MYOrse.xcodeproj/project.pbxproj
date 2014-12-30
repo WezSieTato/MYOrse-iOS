@@ -37,6 +37,8 @@
 		D3630C4B1A25FAE3009D3A1C /* MorseDelayAfterWord.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C4A1A25FAE3009D3A1C /* MorseDelayAfterWord.m */; };
 		D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3630C4D1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m */; };
 		D36D15671A307208009F7125 /* MYOrseListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D36D15661A307208009F7125 /* MYOrseListener.m */; };
+		D38A46881A52DE1200866BD4 /* MorseReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A46871A52DE1200866BD4 /* MorseReceiver.m */; };
+		D38A468B1A52F56900866BD4 /* MYOReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = D38A468A1A52F56900866BD4 /* MYOReceiver.m */; };
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
 		D3A147F81A445B53006082FC /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A147F71A445B53006082FC /* MyoKit.framework */; };
 		D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A147FA1A446B67006082FC /* MYOTransmitter.m */; };
@@ -115,6 +117,10 @@
 		D3630C4D1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseDelayAfterMorseChar.m; sourceTree = "<group>"; };
 		D36D15651A307208009F7125 /* MYOrseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOrseListener.h; sourceTree = "<group>"; };
 		D36D15661A307208009F7125 /* MYOrseListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOrseListener.m; sourceTree = "<group>"; };
+		D38A46861A52DE1200866BD4 /* MorseReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseReceiver.h; sourceTree = "<group>"; };
+		D38A46871A52DE1200866BD4 /* MorseReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseReceiver.m; sourceTree = "<group>"; };
+		D38A46891A52F56900866BD4 /* MYOReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOReceiver.h; sourceTree = "<group>"; };
+		D38A468A1A52F56900866BD4 /* MYOReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOReceiver.m; sourceTree = "<group>"; };
 		D390FEBE1A230C78005B1D13 /* GTalkLoginKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkLoginKeeper.h; sourceTree = "<group>"; };
 		D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkLoginKeeper.m; sourceTree = "<group>"; };
 		D390FED01A2319A6005B1D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -157,6 +163,8 @@
 				D36D15661A307208009F7125 /* MYOrseListener.m */,
 				D3A147F91A446B67006082FC /* MYOTransmitter.h */,
 				D3A147FA1A446B67006082FC /* MYOTransmitter.m */,
+				D38A46891A52F56900866BD4 /* MYOReceiver.h */,
+				D38A468A1A52F56900866BD4 /* MYOReceiver.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -323,6 +331,8 @@
 				D3421CDC1A2DFA1200E13E29 /* MorseMessagePreparator.m */,
 				D319F0551A2F7BA100E96D11 /* MorseBroadcaster.h */,
 				D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */,
+				D38A46861A52DE1200866BD4 /* MorseReceiver.h */,
+				D38A46871A52DE1200866BD4 /* MorseReceiver.m */,
 			);
 			path = Logika;
 			sourceTree = "<group>";
@@ -490,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3421CDA1A2DF91B00E13E29 /* MorseTranslator.m in Sources */,
+				D38A46881A52DE1200866BD4 /* MorseReceiver.m in Sources */,
 				65BD1BF01A2BAE93008C96BE /* MorseTableReader.m in Sources */,
 				D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */,
 				D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */,
@@ -514,6 +525,7 @@
 				65BD1BE61A2B841A008C96BE /* MorseTable.m in Sources */,
 				65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */,
 				D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */,
+				D38A468B1A52F56900866BD4 /* MYOReceiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

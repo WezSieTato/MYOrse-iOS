@@ -20,4 +20,19 @@
     return self;
 }
 
+- (BOOL)isEqual:(id)other
+{
+    if (other == self) return YES;
+    if (other == nil) return NO;
+    if(!([other isKindOfClass:[MorseChar class]])) return NO;
+    MorseChar* mchar = (MorseChar*)other;
+    return mchar.emmitSound == self.emmitSound && mchar.time == self.time;
+    
+}
+
+- (NSUInteger)hash
+{
+    return _time * 43 + 2 * _emmitSound;
+}
+
 @end

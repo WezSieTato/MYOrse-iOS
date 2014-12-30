@@ -13,7 +13,8 @@
 
 @protocol MorseBroadcasterDelegate <NSObject>
 
--(void)morseBroadcasterDidEndTransmition:(MorseBroadcaster*)morseTransmitter;
+-(void)morseBroadcasterDidEndTransmission:(MorseBroadcaster*)morseTransmitter;
+-(void)morseBroadcasterDidInterruptTransmission:(MorseBroadcaster *)morseTransmitter;
 
 @end
 
@@ -39,5 +40,6 @@
 +(instancetype)broadcasterWithTranslator:(MorseTranslator*)translator;
 
 -(void)sendMessage:(NSString*)message;
+-(void)stopTransmission;
 
 @end
