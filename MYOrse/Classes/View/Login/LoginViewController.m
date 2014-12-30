@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "GTalkConnection.h"
-#import "Constants.h"
+#import <MSAddition/MSAddition.h>
 
 @interface LoginViewController () < UITextFieldDelegate >
 
@@ -28,18 +28,8 @@
 {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    
-    if (![username length]) {
-        return  NO;
-    }
-    if (![password length]) {
-        return NO;
-    }
-    if (![[NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", REGEX_EMAIL_VERIFICATION] evaluateWithObject:username]) {
-        return NO;
-    }
-    
-    return YES;
+
+    return [password length] && [username ms_isEmail];
 }
 
 #pragma mark - Login

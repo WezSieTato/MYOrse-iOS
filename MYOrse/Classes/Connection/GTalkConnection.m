@@ -11,12 +11,11 @@
 #import "GTalkLoginKeeper.h"
 
 #import "XMPPJID+GTalk.h"
-#import "Constants.h"
 #import <MSLittleMagic/MSPair.h>
 #import "XMPPPresence+GTalk.h"
 
-#define GCHAT_DOMAIN @"talk.google.com"
-#define GCHAT_PORT 5222
+NSString* const NOTIFICATION_MESSAGE_RECEIVED = @"notificationMessageReceived";
+
 
 @interface GTalkConnection () < XMPPStreamDelegate >{
     NSMutableDictionary* _buddysArray;
@@ -69,8 +68,8 @@ static GTalkConnection *SINGLETON = nil;
     {
         NSLog(@"Setup");
         self.xmppStream = [XMPPStream new];
-        [self.xmppStream setHostName:GCHAT_DOMAIN];
-        [self.xmppStream setHostPort:GCHAT_PORT];
+        [self.xmppStream setHostName:@"talk.google.com"];
+        [self.xmppStream setHostPort:5222];
         [self.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
         
         // Modules

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString* const NOTIFICATION_MESSAGE_RECEIVED;
 typedef void (^GTalkConnectionLoginHandler)(BOOL succes);
 
 @interface GTalkConnection : NSObject

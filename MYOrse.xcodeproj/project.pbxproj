@@ -19,7 +19,6 @@
 		65D2357119FD6A2200CF8A81 /* MYOrseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D2357019FD6A2200CF8A81 /* MYOrseTests.m */; };
 		65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2001A1D3A6200046EBC /* LoginViewController.m */; };
 		65E1B2051A1D447200046EBC /* GTalkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2041A1D447200046EBC /* GTalkConnection.m */; };
-		65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1B2091A1D5CE500046EBC /* Constants.m */; };
 		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
 		D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */; };
 		D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */; };
@@ -81,8 +80,6 @@
 		65E1B2031A1D447200046EBC /* GTalkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTalkConnection.h; sourceTree = "<group>"; };
 		65E1B2041A1D447200046EBC /* GTalkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTalkConnection.m; sourceTree = "<group>"; };
 		65E1B2071A1D5C6500046EBC /* GTalkXMPP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTalkXMPP.h; sourceTree = "<group>"; };
-		65E1B2081A1D5CE500046EBC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		65E1B2091A1D5CE500046EBC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		65E1B20B1A1D5E3100046EBC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		69F6BCAD51640ABEDF67D445 /* Pods-MYOrse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYOrse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYOrse/Pods-MYOrse.debug.xcconfig"; sourceTree = "<group>"; };
 		D319F0551A2F7BA100E96D11 /* MorseBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseBroadcaster.h; sourceTree = "<group>"; };
@@ -91,7 +88,6 @@
 		D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddiesTableViewController.m; sourceTree = "<group>"; };
 		D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPJID+GTalk.h"; sourceTree = "<group>"; };
 		D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPJID+GTalk.m"; sourceTree = "<group>"; };
-		D32B8BDE1A24BA470088AE89 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPPresence+GTalk.h"; sourceTree = "<group>"; };
 		D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPPresence+GTalk.m"; sourceTree = "<group>"; };
 		D3363DC41A27700200AEE0EE /* morse_table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = morse_table.txt; sourceTree = "<group>"; };
@@ -174,9 +170,6 @@
 			children = (
 				6589E1F01A0972A200687054 /* AppDelegate.h */,
 				6589E1F11A0972A200687054 /* AppDelegate.m */,
-				D32B8BDE1A24BA470088AE89 /* PrefixHeader.pch */,
-				65E1B2081A1D5CE500046EBC /* Constants.h */,
-				65E1B2091A1D5CE500046EBC /* Constants.m */,
 				D3630C351A25F7B8009D3A1C /* Logika */,
 				65E1B2021A1D444800046EBC /* Connection */,
 				6589E1F81A09846A00687054 /* View */,
@@ -504,7 +497,6 @@
 				65BD1BF01A2BAE93008C96BE /* MorseTableReader.m in Sources */,
 				D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */,
 				D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */,
-				65E1B20A1A1D5CE500046EBC /* Constants.m in Sources */,
 				D3421CDD1A2DFA1200E13E29 /* MorseMessagePreparator.m in Sources */,
 				654A21851A20BB2900E475D0 /* MainViewController.m in Sources */,
 				D3630C421A25F9BA009D3A1C /* MorseDot.m in Sources */,
