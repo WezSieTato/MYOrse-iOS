@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString* username;
 @property (readonly, getter=isTransmitting) BOOL transmitting;
+@property (nonatomic, readonly, getter=isEnabled) BOOL enabled;
 
 -(void)start;
 -(void)stop;

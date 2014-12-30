@@ -52,6 +52,8 @@
                                              selector:@selector(messageReceived:)
                                                  name:NOTIFICATION_MESSAGE_RECEIVED
                                                object:nil];
+    
+    [self setEnabled:YES];
 }
 
 -(void)stop{
@@ -60,6 +62,8 @@
         [_broadcaster stopTransmission];
         [_myoReceiver stop];
     }
+    
+    self.enabled = NO;
 }
 
 #pragma mark - Delegate Methods
@@ -115,6 +119,16 @@
         _bzzNumber = 0;
         [_myoReceiver startWithEmail:_username];
     }
+}
+
+-(void)setEnabled:(BOOL)enabled{
+    if (enabled == _enabled) {
+        return;
+    }
+    NSString* siemaMsg = NSLocalizedString( enabled ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
+    [[GTalkConnection sharedInstance] sendMessageTo:_username withBody:siemaMsg];
+    
+    enabled = _enabled;
 }
 
 @end

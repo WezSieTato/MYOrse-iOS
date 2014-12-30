@@ -12,7 +12,6 @@
 #import <MyoKit/MyoKit.h>
 
 @interface MainViewController (){
-    BOOL _started;
     NSString* _pickedFriend;
     MYOrseListener* _myorseListener;
     short _syncedMyos;
@@ -81,20 +80,17 @@
     [[GTalkConnection sharedInstance] setVisible:[sender isOn]];
 }
 - (IBAction)startStopReceiver:(UIBarButtonItem *)sender {
-    _started = !_started;
+    BOOL started = !_myorseListener.isEnabled;
     
-    sender.title = NSLocalizedString( _started ? @"STOP_MYORSE_SERVICE" : @"START_MYORSE_SERVICE", nil);
-    NSString* siemaMsg = NSLocalizedString( !_started ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
-    _btnPick.enabled = !_started;
-    _btnMYO.enabled = !_started;
+    sender.title = NSLocalizedString( started ? @"STOP_MYORSE_SERVICE" : @"START_MYORSE_SERVICE", nil);
+    _btnPick.enabled = !started;
+    _btnMYO.enabled = !started;
     
-    if(_started){
+    if(started){
         [_myorseListener start];
     } else {
         [_myorseListener stop];
     }
-    
-    [[GTalkConnection sharedInstance] sendMessageTo:_pickedFriend withBody:siemaMsg];
     
 }
 
