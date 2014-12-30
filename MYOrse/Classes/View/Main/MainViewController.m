@@ -79,7 +79,7 @@
 - (IBAction)MYOsettings:(id)sender {
     TLMSettingsViewController *settings = [[TLMSettingsViewController alloc] init];
     
-    [self.navigationController pushViewController:settings animated:YES];
+    [self.navigationController showViewController:settings sender:sender];
 }
 
 -(void)buddyPickedWithEmail:(NSString *)email{

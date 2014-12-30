@@ -75,7 +75,7 @@
             if (idx < last) {
                 [code addObject:_delayChar];
             }
-            NSLog(@"ch: %@ i: %i, l: %i", obj, idx, last);
+            NSLog(@"ch: %@ i: %lu, l: %lu", obj, (unsigned long)idx, (unsigned long)last);
         }];
         
         [code addObject:_delayWord];

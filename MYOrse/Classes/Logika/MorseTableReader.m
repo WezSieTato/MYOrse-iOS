@@ -83,7 +83,7 @@
 -(NSString*)readChar{
     int len;
     uint8_t buf;
-    len = [_stream read:&buf maxLength:1];
+    len = (int)[_stream read:&buf maxLength:1];
     if(len <= 0)
         return nil;
     NSString *s =
@@ -96,14 +96,14 @@
 -(NSArray*)readCode{
     int len;
     uint8_t buf;
-    len = [_stream read:&buf maxLength:1];
+    len = (int)[_stream read:&buf maxLength:1];
     NSMutableArray* arrayCode = [NSMutableArray new];
     NSNumber* yesNumber = @YES;
     NSNumber* noNumber = @NO;
     while (buf != '\n' && len == 1) {
         NSNumber* number = buf == '.' ? yesNumber : noNumber;
         [arrayCode addObject:number];
-        len = [_stream read:&buf maxLength:1];
+        len = (int)[_stream read:&buf maxLength:1];
     }
     
     return [arrayCode copy];

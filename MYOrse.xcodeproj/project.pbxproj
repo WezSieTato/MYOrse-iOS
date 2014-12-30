@@ -40,6 +40,8 @@
 		D390FEC01A230C78005B1D13 /* GTalkLoginKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = D390FEBF1A230C78005B1D13 /* GTalkLoginKeeper.m */; };
 		D3A147F81A445B53006082FC /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A147F71A445B53006082FC /* MyoKit.framework */; };
 		D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A147FA1A446B67006082FC /* MYOTransmitter.m */; };
+		D3CCFB311A48112A003E67C1 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CCFB301A48112A003E67C1 /* CoreBluetooth.framework */; };
+		D3CCFB331A481138003E67C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CCFB321A481138003E67C1 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		D3A147F71A445B53006082FC /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 		D3A147F91A446B67006082FC /* MYOTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOTransmitter.h; sourceTree = "<group>"; };
 		D3A147FA1A446B67006082FC /* MYOTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOTransmitter.m; sourceTree = "<group>"; };
+		D3CCFB301A48112A003E67C1 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D3CCFB321A481138003E67C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MYOrse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CCFB331A481138003E67C1 /* SystemConfiguration.framework in Frameworks */,
+				D3CCFB311A48112A003E67C1 /* CoreBluetooth.framework in Frameworks */,
 				D3A147F81A445B53006082FC /* MyoKit.framework in Frameworks */,
 				12E5A89AEB801B6D74B5CB2C /* libPods-MYOrse.a in Frameworks */,
 			);
@@ -274,6 +280,8 @@
 		C2FF4B7357622E80A24964AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3CCFB321A481138003E67C1 /* SystemConfiguration.framework */,
+				D3CCFB301A48112A003E67C1 /* CoreBluetooth.framework */,
 				D3A147F71A445B53006082FC /* MyoKit.framework */,
 				D390FED01A2319A6005B1D13 /* Security.framework */,
 				D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */,
@@ -650,8 +658,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
