@@ -89,14 +89,14 @@
 {
     _delay = 0;
     [_code addObject:_dot];
-    [_stringCode appendString:@"-"];
+    [_stringCode appendString:@"."];
 }
 
 -(void)putDash
 {
     _delay = 0;
     [_code addObject:_dash];
-    [_stringCode appendString:@"."];
+    [_stringCode appendString:@"-"];
 }
 
 -(BOOL)putDelay

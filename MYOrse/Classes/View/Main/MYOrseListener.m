@@ -20,6 +20,8 @@
     MYOReceiver* _myoReceiver;
     NSTimer* _bzzTimer;
     short _bzzNumber;
+    BOOL _prepareToTransmittion;
+    NSString* _message;
 }
 
 @end
@@ -79,6 +81,7 @@
 }
 
 -(void)morseBroadcasterDidEndTransmission:(MorseBroadcaster *)morseTransmitter{
+    _prepareToTransmittion = NO;
     [self bzz];
 }
 
@@ -101,8 +104,11 @@
 -(void)transmittMessage:(NSString*)message{
     [[GTalkConnection sharedInstance] sendMessageTo:_username
                                            withBody:NSLocalizedString(@"TRANSMITTION_MORSE_STARTED", nil)];
-    [_broadcaster sendMessage:message];
+
+    _prepareToTransmittion = YES;
+    _message = message;
     _transmitting = YES;
+    [self bzz];
 }
 
 
@@ -112,12 +118,16 @@
 
 -(void)bzz{
     [[TLMHub sharedHub].myoDevices.firstObject indicateUserAction];
-    ++_bzzNumber;
-    if(_bzzNumber < 3)
-        _bzzTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(bzz) userInfo:nil repeats:NO];
+    if(_bzzNumber < 3){
+        ++_bzzNumber;
+        _bzzTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(bzz) userInfo:nil repeats:NO];
+    }
     else{
         _bzzNumber = 0;
-        [_myoReceiver startWithEmail:_username];
+        if(_prepareToTransmittion)
+            [_broadcaster sendMessage:_message];
+        else
+            [_myoReceiver startWithEmail:_username];
     }
 }
 

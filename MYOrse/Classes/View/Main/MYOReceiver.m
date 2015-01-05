@@ -100,7 +100,7 @@
 #pragma mark - Private Methods
 
 -(void)sendMessage{
-    NSString* message = _morseReceiver.message;
+    NSString* message = [_morseReceiver.message stringByAppendingFormat:@" S: %@", _morseReceiver.stringCode ];
     [[GTalkConnection sharedInstance] sendMessageTo:_email withBody:message];
     [_delegate messageSended:message];
     [self stop];

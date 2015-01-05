@@ -43,7 +43,7 @@
 		D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A147FA1A446B67006082FC /* MYOTransmitter.m */; };
 		D3CCFB311A48112A003E67C1 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CCFB301A48112A003E67C1 /* CoreBluetooth.framework */; };
 		D3CCFB331A481138003E67C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CCFB321A481138003E67C1 /* SystemConfiguration.framework */; };
-		D3F7526F1A5AABD500364A3D /* MYOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F7526E1A5AABD500364A3D /* MYOSettingsViewController.m */; };
+		D3F752731A5ABDF900364A3D /* MYOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F752721A5ABDF900364A3D /* MYOSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,8 +126,8 @@
 		D3A147FA1A446B67006082FC /* MYOTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOTransmitter.m; sourceTree = "<group>"; };
 		D3CCFB301A48112A003E67C1 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D3CCFB321A481138003E67C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D3F7526D1A5AABD500364A3D /* MYOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOSettingsViewController.h; sourceTree = "<group>"; };
-		D3F7526E1A5AABD500364A3D /* MYOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOSettingsViewController.m; sourceTree = "<group>"; };
+		D3F752711A5ABDF900364A3D /* MYOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOSettingsViewController.h; sourceTree = "<group>"; };
+		D3F752721A5ABDF900364A3D /* MYOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOSettingsViewController.m; sourceTree = "<group>"; };
 		D8B2115B30BBB978DE1A5853 /* libPods-MYOrse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MYOrse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,8 +164,6 @@
 				D3A147FA1A446B67006082FC /* MYOTransmitter.m */,
 				D38A46891A52F56900866BD4 /* MYOReceiver.h */,
 				D38A468A1A52F56900866BD4 /* MYOReceiver.m */,
-				D3F7526D1A5AABD500364A3D /* MYOSettingsViewController.h */,
-				D3F7526E1A5AABD500364A3D /* MYOSettingsViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -185,6 +183,7 @@
 		6589E1F81A09846A00687054 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3F752701A5ABDF900364A3D /* MYOSetting */,
 				D32B8BD61A24AC980088AE89 /* BuddyList */,
 				654A21821A20BB0E00E475D0 /* Main */,
 				65E1B1FE1A1D3A6200046EBC /* Login */,
@@ -359,6 +358,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D3F752701A5ABDF900364A3D /* MYOSetting */ = {
+			isa = PBXGroup;
+			children = (
+				D3F752711A5ABDF900364A3D /* MYOSettingsViewController.h */,
+				D3F752721A5ABDF900364A3D /* MYOSettingsViewController.m */,
+			);
+			path = MYOSetting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -503,7 +511,7 @@
 				D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */,
 				D3630C4E1A25FB1A009D3A1C /* MorseDelayAfterMorseChar.m in Sources */,
 				D3421CDD1A2DFA1200E13E29 /* MorseMessagePreparator.m in Sources */,
-				D3F7526F1A5AABD500364A3D /* MYOSettingsViewController.m in Sources */,
+				D3F752731A5ABDF900364A3D /* MYOSettingsViewController.m in Sources */,
 				654A21851A20BB2900E475D0 /* MainViewController.m in Sources */,
 				D3630C421A25F9BA009D3A1C /* MorseDot.m in Sources */,
 				D3630C481A25FAB7009D3A1C /* MorseDelayAfterChar.m in Sources */,
