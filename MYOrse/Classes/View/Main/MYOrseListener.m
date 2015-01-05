@@ -125,10 +125,10 @@
     if (enabled == _enabled) {
         return;
     }
-    NSString* siemaMsg = NSLocalizedString( enabled ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
+    NSString* siemaMsg = NSLocalizedString( !enabled ? @"STOP_MYORSE_MESSAGE" : @"START_MYORSE_MESSAGE", nil);
     [[GTalkConnection sharedInstance] sendMessageTo:_username withBody:siemaMsg];
     
-    enabled = _enabled;
+    _enabled = enabled;
 }
 
 @end

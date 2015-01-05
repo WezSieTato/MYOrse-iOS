@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPick;
 @property (weak, nonatomic) IBOutlet UIButton *btnMYO;
 @property (weak, nonatomic) IBOutlet UILabel *lblSynchronizedNumber;
+@property (strong, nonatomic) UIPopoverController* popover;
 
 @end
 
@@ -48,13 +49,15 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-}
-
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
+}
+
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 #pragma mark - MYO events
@@ -70,6 +73,7 @@
 }
 
 -(void)updateSyncedNumberLabel{
+    
     _lblSynchronizedNumber.text = [NSString stringWithFormat:@"%i", _syncedMyos];
     [self enableReceiverIfCan];
 }
@@ -99,12 +103,6 @@
     
     UIViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
     [self presentViewController:next animated:YES completion:nil];
-}
-
-- (IBAction)MYOsettings:(id)sender {
-    TLMSettingsViewController *settings = [[TLMSettingsViewController alloc] init];
-    
-    [self.navigationController showViewController:settings sender:sender];
 }
 
 -(void)buddyPickedWithEmail:(NSString *)email{

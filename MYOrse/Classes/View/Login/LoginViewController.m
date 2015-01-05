@@ -115,6 +115,15 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.usernameTextField) {
+        NSString* email = textField.text;
+        if (![email ms_isEmail]) {
+            email = [email stringByAppendingString:@"@gmail.com"];
+            if([email ms_isEmail]){
+                textField.text = email;
+            } else {
+                return NO;
+            }
+        }
         [self.passwordTextField becomeFirstResponder];
     } else if (textField == self.passwordTextField && [self isValidInputs]) {
         [self loginButtonTapped:self.loginButton];
