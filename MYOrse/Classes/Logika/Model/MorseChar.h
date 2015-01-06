@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define kMorseCharDotTime 0.5f
+#define kMorseCharDotTime 0.75f
 
 @interface MorseChar : NSObject
 

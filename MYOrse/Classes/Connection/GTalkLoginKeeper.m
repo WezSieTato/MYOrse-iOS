@@ -17,7 +17,6 @@ NSString* const kGTalkRememberKey = @"kGTalkRememberKey";
 @property (nonatomic, readonly) NSString* kGTalkSerwer;
 @property (nonatomic, readonly) NSString* kGTalkRememberKey;
 
-
 @end
 
 @implementation GTalkLoginKeeper
