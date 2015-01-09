@@ -21,6 +21,7 @@
     // Override point for customization after application launch.
    
     [[TLMHub sharedHub] setShouldNotifyInBackground:YES];
+    [[TLMHub sharedHub] setMyoConnectionAllowance:2];
     return YES;
 }
 

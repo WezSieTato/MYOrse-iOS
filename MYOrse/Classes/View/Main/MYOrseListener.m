@@ -117,7 +117,7 @@
 }
 
 -(void)bzz{
-    [[TLMHub sharedHub].myoDevices.firstObject indicateUserAction];
+    [[[TLMHub sharedHub].myoDevices objectAtIndex:0] indicateUserAction];
     if(_bzzNumber < 3){
         ++_bzzNumber;
         _bzzTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(bzz) userInfo:nil repeats:NO];
