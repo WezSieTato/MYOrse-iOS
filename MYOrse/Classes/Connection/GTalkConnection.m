@@ -10,12 +10,10 @@
 #import "GTalkXMPP.h"
 #import "GTalkLoginKeeper.h"
 
-#import "XMPPJID+GTalk.h"
 #import <MSLittleMagic/MSPair.h>
 #import "XMPPPresence+GTalk.h"
 
 NSString* const NOTIFICATION_MESSAGE_RECEIVED = @"notificationMessageReceived";
-
 
 @interface GTalkConnection () < XMPPStreamDelegate >{
     NSMutableDictionary* _buddysArray;
@@ -115,7 +113,7 @@ static GTalkConnection *SINGLETON = nil;
     // If already connected, return true
     if ([self isConnected]) {
         NSLog(@"Already connected!");
-        [self callLoginHandler:YES];
+        [self callLoginHandlerWithSucces:YES];
         return YES;
     }
     
@@ -124,15 +122,14 @@ static GTalkConnection *SINGLETON = nil;
     self.tempPassword = password;
     [self.xmppStream setMyJID:[XMPPJID jidWithString:username]];
     NSError *error;
-    if (![self.xmppStream connectWithTimeout:8 error:&error])
+    if (![self.xmppStream connectWithTimeout:3 error:&error])
     {
         NSLog(@"connect failed@");
-        [self callLoginHandler:NO];
+        [self callLoginHandlerWithSucces:NO];
 
         return NO;
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    NSLog(@"connected!");
     
     if(remember){
         GTalkLoginKeeper* keeper = [ GTalkLoginKeeper new];
@@ -244,13 +241,14 @@ static GTalkConnection *SINGLETON = nil;
 - (void)xmppStreamConnectDidTimeout:(XMPPStream *)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self callLoginHandlerWithSucces:NO];
 
 }
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    [self callLoginHandler:YES];
+    [self callLoginHandlerWithSucces:YES];
     [self goOnline];
 
 }
@@ -258,11 +256,11 @@ static GTalkConnection *SINGLETON = nil;
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    [self callLoginHandler:NO];
+    [self callLoginHandlerWithSucces:NO];
 
 }
 
--(void)callLoginHandler:(BOOL)succes{
+-(void)callLoginHandlerWithSucces:(BOOL)succes{
     if(self.loginHandler){
         self.loginHandler(succes);
     }
@@ -275,6 +273,8 @@ static GTalkConnection *SINGLETON = nil;
 - (void)xmppStream:(XMPPStream *)sender didReceiveError:(NSXMLElement *)error
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self callLoginHandlerWithSucces:NO];
+
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence

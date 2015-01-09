@@ -22,7 +22,6 @@
 		65E1B20C1A1D5E3100046EBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65E1B20B1A1D5E3100046EBC /* Localizable.strings */; };
 		D319F0571A2F7BA100E96D11 /* MorseBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */; };
 		D32B8BD91A24ACB60088AE89 /* BuddiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */; };
-		D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */; };
 		D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */; };
 		D3363DC51A27700200AEE0EE /* morse_table.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3363DC41A27700200AEE0EE /* morse_table.txt */; };
 		D3421CDA1A2DF91B00E13E29 /* MorseTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = D3421CD91A2DF91B00E13E29 /* MorseTranslator.m */; };
@@ -87,8 +86,6 @@
 		D319F0561A2F7BA100E96D11 /* MorseBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseBroadcaster.m; sourceTree = "<group>"; };
 		D32B8BD71A24ACB60088AE89 /* BuddiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddiesTableViewController.h; sourceTree = "<group>"; };
 		D32B8BD81A24ACB60088AE89 /* BuddiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddiesTableViewController.m; sourceTree = "<group>"; };
-		D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPJID+GTalk.h"; sourceTree = "<group>"; };
-		D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPJID+GTalk.m"; sourceTree = "<group>"; };
 		D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMPPPresence+GTalk.h"; sourceTree = "<group>"; };
 		D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMPPPresence+GTalk.m"; sourceTree = "<group>"; };
 		D3363DC41A27700200AEE0EE /* morse_table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = morse_table.txt; sourceTree = "<group>"; };
@@ -306,8 +303,6 @@
 		D32B8BDA1A24B2D70088AE89 /* XMPPCategories */ = {
 			isa = PBXGroup;
 			children = (
-				D32B8BDB1A24B31C0088AE89 /* XMPPJID+GTalk.h */,
-				D32B8BDC1A24B31C0088AE89 /* XMPPJID+GTalk.m */,
 				D32B8BDF1A24BDC00088AE89 /* XMPPPresence+GTalk.h */,
 				D32B8BE01A24BDC00088AE89 /* XMPPPresence+GTalk.m */,
 			);
@@ -519,7 +514,6 @@
 				D32B8BE11A24BDC00088AE89 /* XMPPPresence+GTalk.m in Sources */,
 				D3A147FB1A446B67006082FC /* MYOTransmitter.m in Sources */,
 				6589E1F61A0972A200687054 /* AppDelegate.m in Sources */,
-				D32B8BDD1A24B31C0088AE89 /* XMPPJID+GTalk.m in Sources */,
 				65D2355719FD6A2200CF8A81 /* main.m in Sources */,
 				65E1B2011A1D3A6200046EBC /* LoginViewController.m in Sources */,
 				D3630C4B1A25FAE3009D3A1C /* MorseDelayAfterWord.m in Sources */,

@@ -96,6 +96,8 @@
         [_myorseListener stop];
     }
     
+    [self enableReceiverIfCan];
+    
 }
 
 -(IBAction)logout:(id)sender{
@@ -119,12 +121,12 @@
 }
 
 -(void)enableReceiverIfCan{
-    BOOL can = _pickedFriend && _syncedMyos > 0;
+    BOOL can = _myorseListener.isEnabled || ( _pickedFriend && _syncedMyos > 0);
     _btnStart.enabled = can;
     [self.navigationController setToolbarHidden:!can animated:YES];
-    if(!can && [_myorseListener isTransmitting]){
-        [_myorseListener stop];
-    }
+//    if(!can && [_myorseListener isTransmitting]){
+//        [_myorseListener stop];
+//    }
 }
 
 @end
